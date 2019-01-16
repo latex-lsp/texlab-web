@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import 'material-colors/dist/colors.scss';
+
+$family-sans-serif: 'Nunito', sans-serif;
+$primary: $md-green-a700;
+
+$navbar-height: 3.5rem;
+$navbar-item-img-max-height: 40px;
+
+.navbar-brand > a > img {
+  width: auto;
+  height: $navbar-item-img-max-height;
+}
+
+@import 'bulma/bulma.sass';

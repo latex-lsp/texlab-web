@@ -1,37 +1,43 @@
-import { Link } from 'gatsby';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  Button,
+  Container,
+  Navbar,
+  NavbarBrand,
+  NavbarEnd,
+  NavbarItem,
+  NavbarMenu,
+  NavbarStart,
+} from 'bloomer';
 import React from 'react';
 
-interface HeaderProps {
-  siteTitle: string;
-}
+import Logo from '../images/logo.svg';
 
-export const Header: React.FunctionComponent<HeaderProps> = ({ siteTitle }) => {
+export const Header: React.FunctionComponent = () => {
   return (
-    <div
-      style={{
-        background: `rebeccapurple`,
-        marginBottom: `1.45rem`,
-      }}
-    >
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `1.45rem 1.0875rem`,
-        }}
-      >
-        <h1 style={{ margin: 0 }}>
-          <Link
-            to="/"
-            style={{
-              color: `white`,
-              textDecoration: `none`,
-            }}
-          >
-            {siteTitle}
-          </Link>
-        </h1>
-      </div>
-    </div>
+    <Navbar className="navbar is-light">
+      <Container>
+        <NavbarBrand>
+          <NavbarItem href="/" isDisplay="flex">
+            <img src={Logo} alt="TexLab" />
+          </NavbarItem>
+        </NavbarBrand>
+        <NavbarMenu>
+          <NavbarStart>
+            <NavbarItem href="/">Home</NavbarItem>
+            <NavbarItem href="/docs">Docs</NavbarItem>
+          </NavbarStart>
+          <NavbarEnd>
+            <NavbarItem href="https://github.com/efoerster/texlab">
+              <FontAwesomeIcon icon={faGithub} size="lg" />
+            </NavbarItem>
+            <NavbarItem>
+              <Button isColor="primary">Download</Button>
+            </NavbarItem>
+          </NavbarEnd>
+        </NavbarMenu>
+      </Container>
+    </Navbar>
   );
 };

@@ -16,10 +16,10 @@ import Logo from '../images/logo.svg';
 
 export const Header: React.FunctionComponent = () => {
   return (
-    <Navbar className="navbar is-light">
+    <Navbar className="is-white has-shadow">
       <Container>
         <NavbarBrand>
-          <NavbarItem href="/" isDisplay="flex">
+          <NavbarItem href="/">
             <img src={Logo} alt="TexLab" />
           </NavbarItem>
         </NavbarBrand>

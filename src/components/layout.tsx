@@ -1,3 +1,4 @@
+import { Footer } from 'bloomer';
 import React from 'react';
 import { Header } from './header';
 
@@ -8,11 +9,7 @@ export const Layout: React.FunctionComponent = props => {
     <>
       <Header />
       {props.children}
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      <Footer />
     </>
   );
 };

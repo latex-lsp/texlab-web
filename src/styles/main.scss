@@ -2,7 +2,11 @@
 @import 'material-colors/dist/colors.scss';
 
 $family-sans-serif: 'Nunito', sans-serif;
-$primary: $md-green-a700;
+$primary: $md-green-a400;
+$primary-invert: $md-white;
+
+$info: $md-grey-50;
+$info-invert: $md-black;
 
 $navbar-height: 3.5rem;
 $navbar-item-img-max-height: 40px;
@@ -10,6 +14,11 @@ $navbar-item-img-max-height: 40px;
 .navbar-brand > a > img {
   width: auto;
   height: $navbar-item-img-max-height;
+}
+
+.center-img {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @import 'bulma/bulma.sass';

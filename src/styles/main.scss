@@ -5,8 +5,10 @@ $family-sans-serif: 'Nunito', sans-serif;
 $primary: $md-green-a400;
 $primary-invert: $md-white;
 
-$info: $md-grey-50;
+$info: $md-grey-100;
 $info-invert: $md-black;
+$success: $md-green-400;
+$danger: $md-red-400;
 
 $navbar-height: 3.5rem;
 $navbar-item-img-max-height: 40px;
@@ -19,6 +21,13 @@ $navbar-item-img-max-height: 40px;
 .center-img {
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+  .reverse-columns {
+    flex-direction: row-reverse;
+    display: flex;
+  }
 }
 
 @import 'bulma/bulma.sass';

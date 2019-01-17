@@ -9,7 +9,6 @@ export const Layout: React.FunctionComponent = props => {
     <>
       <Header />
       {props.children}
-      <Footer />
     </>
   );
 };

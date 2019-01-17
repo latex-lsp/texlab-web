@@ -1,4 +1,9 @@
 import {
+  faCheckCircle,
+  faTimesCircle,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
   Button,
   Column,
   Columns,
@@ -9,11 +14,13 @@ import {
   Image,
   Section,
   Subtitle,
+  Table,
   Title,
 } from 'bloomer';
 import React from 'react';
 import { Layout } from '../components/layout';
 import { SEO } from '../components/seo';
+import { SERVER_FEATURES } from '../data/features';
 
 import Bibtex from '../images/bibtex.gif';
 import Completion from '../images/completion.gif';
@@ -51,6 +58,38 @@ const FeatureSection: React.FunctionComponent<FeatureSectionProps> = ({
     </Container>
   </Section>
 );
+
+const FeatureTable: React.FunctionComponent = () => {
+  const CheckmarkRow = ({ isChecked = false }) => (
+    <td className="center-column">
+      <FontAwesomeIcon
+        className={isChecked ? 'has-text-success' : 'has-text-danger'}
+        icon={isChecked ? faCheckCircle : faTimesCircle}
+      />
+    </td>
+  );
+
+  return (
+    <Table isStriped={true} isBordered={true} isNarrow={true}>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th className="center-column">LaTeX</th>
+          <th className="center-column">BibTeX</th>
+        </tr>
+      </thead>
+      <tbody>
+        {SERVER_FEATURES.map(({ name, latex, bibtex }, key) => (
+          <tr key={key}>
+            <td>{name}</td>
+            <CheckmarkRow isChecked={latex} />
+            <CheckmarkRow isChecked={bibtex} />
+          </tr>
+        ))}
+      </tbody>
+    </Table>
+  );
+};
 
 const IndexPage: React.FunctionComponent = () => {
   return (
@@ -109,6 +148,14 @@ const IndexPage: React.FunctionComponent = () => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </FeatureSection>
+      <Section hasTextAlign="centered" className="has-background-info">
+        <Title>Feature List</Title>
+        <Container>
+          <Content>
+            <FeatureTable />
+          </Content>
+        </Container>
+      </Section>
     </Layout>
   );
 };

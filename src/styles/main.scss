@@ -5,8 +5,11 @@ $family-sans-serif: 'Nunito', sans-serif;
 $primary: $md-green-a400;
 $primary-invert: $md-white;
 
+$light: $md-grey-50;
+$light-invert: $md-black;
 $info: $md-grey-100;
 $info-invert: $md-black;
+$link: $md-green-600;
 $success: $md-green-400;
 $danger: $md-red-400;
 
@@ -23,15 +26,25 @@ $navbar-item-img-max-height: 40px;
   margin-right: auto;
 }
 
-@media (min-width: 1024px) {
+.center-column {
+  text-align: center !important;
+}
+
+@import 'bulma/bulma.sass';
+
+@media (min-width: $desktop) {
   .reverse-columns {
     flex-direction: row-reverse;
     display: flex;
   }
 }
 
-.center-column {
-  text-align: center !important;
+@media (min-width: $fullhd) {
+  .hero-image {
+    background: url('../assets/images/background.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
 }
-
-@import 'bulma/bulma.sass';

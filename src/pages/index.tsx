@@ -99,7 +99,7 @@ const IndexPage: React.FunctionComponent = () => {
         title="Home"
         keywords={[`texlab`, `latex`, `lsp`, `language server`, `vscode`]}
       />
-      <Hero isColor="info" isBold={false}>
+      <Hero isColor="light" className="hero-image" isSize="medium">
         <HeroBody>
           <Container hasTextAlign="centered">
             <Column isOffset="1/3" isSize="1/3">

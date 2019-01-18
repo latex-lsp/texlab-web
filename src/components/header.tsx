@@ -13,7 +13,7 @@ import {
 } from 'bloomer';
 import React from 'react';
 
-import Logo from '../images/logo.svg';
+import Logo from '../assets/images/logo.svg';
 
 const NavbarGithubItem = ({ hideOnDesktop = false }) => {
   const isHidden = hideOnDesktop ? 'desktop' : undefined;

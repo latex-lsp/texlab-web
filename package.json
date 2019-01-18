@@ -29,13 +29,15 @@
     "material-colors": "^1.2.6",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-visibility-sensor": "^5.0.2"
   },
   "devDependencies": {
     "@types/node": "^10.12.18",
     "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.11",
     "@types/react-helmet": "^5.0.8",
+    "@types/react-visibility-sensor": "^5.0.0",
     "node-sass": "^4.11.0",
     "prettier": "^1.15.2",
     "tslint": "^5.12.1",

@@ -22,20 +22,21 @@ import { Layout } from '../components/layout';
 import { SEO } from '../components/seo';
 import { SERVER_FEATURES } from '../data/features';
 
-import Bibtex from '../images/bibtex.gif';
-import Completion from '../images/completion.gif';
-import Icon from '../images/icon.svg';
-import Rename from '../images/rename.gif';
+import Icon from '../assets/images/icon.svg';
+import BibtexVideo from '../assets/videos/bibtex.webm';
+import CompletionVideo from '../assets/videos/completion.webm';
+import RenameVideo from '../assets/videos/rename.webm';
+import { Video } from '../components/video';
 
 interface FeatureSectionProps {
   title: string;
-  imageSource: string;
+  videoSource: string;
   isEven?: boolean;
 }
 
 const FeatureSection: React.FunctionComponent<FeatureSectionProps> = ({
   title,
-  imageSource,
+  videoSource,
   isEven = false,
   children,
 }) => (
@@ -48,7 +49,7 @@ const FeatureSection: React.FunctionComponent<FeatureSectionProps> = ({
         isVCentered={true}
         className={isEven ? 'reverse-columns' : undefined}>
         <Column>
-          <img src={imageSource} />
+          <Video src={videoSource} />
         </Column>
         <Column>
           <Title>{title}</Title>
@@ -115,7 +116,7 @@ const IndexPage: React.FunctionComponent = () => {
           </Container>
         </HeroBody>
       </Hero>
-      <FeatureSection title="Code Completion" imageSource={Completion}>
+      <FeatureSection title="Code Completion" videoSource={CompletionVideo}>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and
@@ -126,7 +127,7 @@ const IndexPage: React.FunctionComponent = () => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </FeatureSection>
-      <FeatureSection isEven={true} title="Rename" imageSource={Rename}>
+      <FeatureSection isEven={true} title="Rename" videoSource={RenameVideo}>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and
@@ -137,7 +138,7 @@ const IndexPage: React.FunctionComponent = () => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </FeatureSection>
-      <FeatureSection title="BibTeX" imageSource={Bibtex}>
+      <FeatureSection title="BibTeX" videoSource={BibtexVideo}>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and

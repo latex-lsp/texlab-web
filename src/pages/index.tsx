@@ -110,7 +110,7 @@ const IndexPage: React.FunctionComponent = () => {
                 for LaTeX.
               </Subtitle>
             </Column>
-            <Button isColor="primary" isSize="large">
+            <Button isColor="primary" isSize="large" href="/docs">
               Get Started
             </Button>
           </Container>

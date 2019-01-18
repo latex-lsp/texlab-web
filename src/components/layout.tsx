@@ -1,4 +1,3 @@
-import { Footer } from 'bloomer';
 import React from 'react';
 import { Header } from './header';
 

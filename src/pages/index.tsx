@@ -97,7 +97,7 @@ const IndexPage: React.FC = () => {
     <Layout>
       <SEO
         title="Home"
-        keywords={[`texlab`, `latex`, `lsp`, `language server`, `vscode`]}
+        keywords={['texlab', 'latex', 'lsp', 'language server', 'vscode']}
       />
       <Hero isColor="light" className="hero-image" isSize="medium">
         <HeroBody>

@@ -3,7 +3,7 @@ const path = require('path');
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
-  const component = path.resolve(`src/templates/docs.tsx`);
+  const component = path.resolve('src/templates/docs.tsx');
   return graphql(`
     {
       allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___order] }) {

@@ -1,5 +1,5 @@
-import { Menu, MenuLabel, MenuLink, MenuList } from 'bloomer';
-import { navigate } from 'gatsby';
+import { Menu, MenuLabel, MenuList } from 'bloomer';
+import { Link } from 'gatsby';
 import React from 'react';
 
 export interface SidebarNavNode {
@@ -17,7 +17,7 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({ label, nodes }) => {
   const renderNode = (node: SidebarNavNode, key: number) => {
     return (
       <li key={key}>
-        <MenuLink onClick={() => navigate(node.path)}>{node.name}</MenuLink>
+        <Link to={node.path}>{node.name}</Link>
         {node.children.length > 0 && (
           <MenuList>{node.children.map(renderNode)}</MenuList>
         )}

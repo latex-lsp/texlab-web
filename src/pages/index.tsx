@@ -22,6 +22,7 @@ import { Layout } from '../components/layout';
 import { SEO } from '../components/seo';
 import { SERVER_FEATURES } from '../data/features';
 
+import { Link } from 'gatsby';
 import Icon from '../assets/images/icon.svg';
 import BibtexVideo from '../assets/videos/bibtex.webm';
 import CompletionVideo from '../assets/videos/completion.webm';
@@ -110,9 +111,11 @@ const IndexPage: React.FC = () => {
                 for LaTeX.
               </Subtitle>
             </Column>
-            <Button isColor="primary" isSize="large" href="/docs">
-              Get Started
-            </Button>
+            <Link to="/docs">
+              <Button isColor="primary" isSize="large">
+                Get Started
+              </Button>
+            </Link>
           </Container>
         </HeroBody>
       </Hero>

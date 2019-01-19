@@ -11,6 +11,7 @@ import {
   NavbarMenu,
   NavbarStart,
 } from 'bloomer';
+import { Link } from 'gatsby';
 import React from 'react';
 
 import Logo from '../assets/images/logo.svg';
@@ -23,6 +24,16 @@ const NavbarGithubItem = ({ hideOnDesktop = false }) => {
     </NavbarItem>
   );
 };
+
+interface NavbarLinkProps {
+  to: string;
+}
+
+const NavbarLink: React.FC<NavbarLinkProps> = ({ to, children }) => (
+  <Link className="navbar-item" to={to}>
+    {children}
+  </Link>
+);
 
 interface HeaderState {
   isCollapsed: boolean;
@@ -40,16 +51,16 @@ export class Header extends React.Component<{}, HeaderState> {
       <Navbar className="is-white has-shadow">
         <Container>
           <NavbarBrand>
-            <NavbarItem href="/">
+            <NavbarLink to="/">
               <img src={Logo} alt="TexLab" />
-            </NavbarItem>
+            </NavbarLink>
             <NavbarGithubItem hideOnDesktop={true} />
             <NavbarBurger isActive={isActive} onClick={this.handleClick} />
           </NavbarBrand>
           <NavbarMenu isActive={isActive} onClick={this.handleClick}>
             <NavbarStart>
-              <NavbarItem href="/">Home</NavbarItem>
-              <NavbarItem href="/docs">Docs</NavbarItem>
+              <NavbarLink to="/">Home</NavbarLink>
+              <NavbarLink to="/docs">Docs</NavbarLink>
             </NavbarStart>
             <NavbarEnd isHidden="touch">
               <NavbarGithubItem />

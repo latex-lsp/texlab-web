@@ -9,12 +9,15 @@ $light: $md-grey-50;
 $light-invert: $md-black;
 $info: $md-grey-100;
 $info-invert: $md-black;
-$link: $md-green-a400;
+$link: $md-green-600;
 $success: $md-green-400;
 $danger: $md-red-400;
 
 $navbar-height: 3.5rem;
 $navbar-item-img-max-height: 40px;
+
+$menu-item-hover-color: $link;
+$menu-item-hover-background-color: rgba(0, 0, 0, 0);
 
 .navbar-brand > a > img {
   width: auto;

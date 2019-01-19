@@ -6,7 +6,7 @@ exports.createPages = ({ actions, graphql }) => {
   const component = path.resolve(`src/templates/docs.tsx`);
   return graphql(`
     {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___order] }) {
         edges {
           node {
             frontmatter {

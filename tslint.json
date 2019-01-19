@@ -15,6 +15,7 @@
     "no-empty": false,
     "no-bitwise": false,
     "jsx-no-multiline-js": false,
-    "jsx-alignment": false
+    "jsx-alignment": false,
+    "jsx-no-lambda": false
   }
 }

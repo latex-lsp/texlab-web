@@ -3,11 +3,11 @@ import { Header } from './header';
 
 import '../styles/main.scss';
 
-export const Layout: React.FunctionComponent = props => {
+export const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Header />
-      {props.children}
+      {children}
     </>
   );
 };

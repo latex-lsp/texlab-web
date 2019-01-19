@@ -34,7 +34,7 @@ interface FeatureSectionProps {
   isEven?: boolean;
 }
 
-const FeatureSection: React.FunctionComponent<FeatureSectionProps> = ({
+const FeatureSection: React.FC<FeatureSectionProps> = ({
   title,
   videoSource,
   isEven = false,
@@ -60,7 +60,7 @@ const FeatureSection: React.FunctionComponent<FeatureSectionProps> = ({
   </Section>
 );
 
-const FeatureTable: React.FunctionComponent = () => {
+const FeatureTable: React.FC = () => {
   const CheckmarkRow = ({ isChecked = false }) => (
     <td className="center-column">
       <FontAwesomeIcon
@@ -92,7 +92,7 @@ const FeatureTable: React.FunctionComponent = () => {
   );
 };
 
-const IndexPage: React.FunctionComponent = () => {
+const IndexPage: React.FC = () => {
   return (
     <Layout>
       <SEO

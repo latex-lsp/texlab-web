@@ -3,7 +3,7 @@ import React from 'react';
 import { Layout } from '../components/layout';
 import { SEO } from '../components/seo';
 
-const NotFoundPage: React.FunctionComponent = () => {
+const NotFoundPage: React.FC = () => {
   const title = 'Page Not Found';
   return (
     <Layout>

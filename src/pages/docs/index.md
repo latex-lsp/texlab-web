@@ -13,10 +13,12 @@ It aims to produce high quality code completion results by indexing your used pa
 
 In order to start the server, you will need to install:
 
-- A [TeX distribution](https://www.latex-project.org/get/#tex-distributions) of choice.
+- A [TeX distribution](https://www.latex-project.org/get/#tex-distributions).
+  We support all distributions that are based on TeX Live and MikTeX.
 - A [Java 8](https://java.com/en/download) (or later) runtime environment.
 
 > **Note**: Please make sure that both dependencies are in your `PATH` environment variable.
+> If you use MikTeX, then ensure that `kpsewhich` is installed.
 
 ## Supported editors
 
@@ -42,9 +44,7 @@ However, we will only consider `latexmk` in the following sections.
 #### Previewing
 
 We believe that previewing should be a concern of the build system.
-With `latexmk` you can enable the preview feature by adding the `-pv` flag to the `latex.build.args` setting.
-
-> **Note**: Do not use the `-pvc` option of `latexmk`. Enable the `latex.build.onSave` feature and use the `-pv` option instead.
+The preview feature of `latexmk` can be enabled by adding the `-pv` flag to the `latex.build.args` setting.
 
 In order to use [SyncTeX](http://www.tug.org/TUGboat/tb29-3/tb93laurens.pdf), you need to configure the settings in the `latex.forwardSearch` section
 and configure your previewer to call your editor correctly.

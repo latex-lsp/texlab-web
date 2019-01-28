@@ -34,20 +34,24 @@ Moreover, it is not necessary to configure master/child files, since they are de
 
 ### Build system
 
-Documents can be built by invoking the `latex.build` command or by enabling the `latex.build.onSave` feature.
-Hanging builds can be aborted with the `latex.build.cancel` command.
+Documents can be built by invoking the [`latex.build`](/docs/reference#latexbuild) command
+or by enabling the [`latex.build.onSave`](/docs/reference#latexbuildonsave) feature.
+Hanging builds can be aborted with the [`latex.build.cancel`](/docs/reference#latexbuildcancel) command.
 
 By default, [`latexmk`](https://ctan.org/pkg/latexmk?lang=en) is used as build system.
-You can customize this by changing the settings in the `latex.build` section.
+You can customize this by changing the settings in the [`latex.build`](/docs/reference#latexbuildexecutable) section.
 However, we will only consider `latexmk` in the following sections.
 
 #### Previewing
 
 We believe that previewing should be a concern of the build system.
-The preview feature of `latexmk` can be enabled by adding the `-pv` flag to the `latex.build.args` setting.
+The preview feature of `latexmk` can be enabled by adding the `-pv` flag
+to the [`latex.build.args`](/docs/reference#latexbuildargs) setting.
 
-In order to use [SyncTeX](http://www.tug.org/TUGboat/tb29-3/tb93laurens.pdf), you need to configure the settings in the `latex.forwardSearch` section
+In order to use [SyncTeX](http://www.tug.org/TUGboat/tb29-3/tb93laurens.pdf),
+you need to configure the settings in the [`latex.forwardSearch`](/docs/reference#latexforwardsearchexecutable) section
 and configure your previewer to call your editor correctly.
+A forward search can then be executed by invoking the [`latex.forwardSearch`](/docs/reference#latexforwardsearch) command.
 For the sake of simplicity, we will only give configuration examples for Visual Studio Code in the following sections.
 
 ##### SumatraPDF

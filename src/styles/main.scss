@@ -61,6 +61,13 @@ $menu-item-hover-background-color: rgba(0, 0, 0, 0);
 
 @import 'prismjs-material-theme/sass/lighter.scss';
 
+.number {
+  all: initial;
+  * {
+    all: unset;
+  }
+}
+
 $prismjs-theme-sass-core--selection-background: $md-green-a100;
 $prismjs-theme-sass-core--base-font-size: 14px;
 $prismjs-theme-sass-core--pre-color: $md-black;

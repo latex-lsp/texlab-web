@@ -13,9 +13,6 @@ $link: $md-green-600;
 $success: $md-green-400;
 $danger: $md-red-400;
 
-$code: $md-black;
-$code-background: $md-grey-100;
-
 $content-blockquote-background-color: rgba($md-green-a100, 0.3);
 $content-blockquote-border-left: 5px solid $primary;
 
@@ -24,6 +21,10 @@ $navbar-item-img-max-height: 40px;
 
 $menu-item-hover-color: $link;
 $menu-item-hover-background-color: rgba(0, 0, 0, 0);
+
+::selection {
+  background-color: $md-green-a100;
+}
 
 .navbar-brand > a > img {
   width: auto;
@@ -57,3 +58,34 @@ $menu-item-hover-background-color: rgba(0, 0, 0, 0);
     background-size: cover;
   }
 }
+
+@import 'prismjs-material-theme/sass/lighter.scss';
+
+$prismjs-theme-sass-core--selection-background: $md-green-a100;
+$prismjs-theme-sass-core--base-font-size: 14px;
+$prismjs-theme-sass-core--pre-color: $md-black;
+$prismjs-theme-sass-core--pre-background: $md-grey-100;
+$prismjs-theme-sass-core--code-color: $md-black;
+$prismjs-theme-sass-core--code-background: $md-grey-100;
+
+@mixin prismjs-theme-sass-core--token-attr-value() {
+  color: $md-light-green-600;
+}
+
+@mixin prismjs-theme-sass-core--token-attribute() {
+  color: $md-light-green-600;
+}
+
+@mixin prismjs-theme-sass-core--token-pseudo-class() {
+  color: $md-light-green-600;
+}
+
+@mixin prismjs-theme-sass-core--token-pseudo-element() {
+  color: $md-light-green-600;
+}
+
+@mixin prismjs-theme-sass-core--token-string() {
+  color: $md-light-green-700;
+}
+
+@include prismjs-theme-sass-core--generate();

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
-@import 'material-colors/dist/colors.scss';
+@import '~material-colors/dist/colors.scss';
 
 $family-sans-serif: 'Nunito', sans-serif;
 $primary: $md-green-a400;
@@ -9,6 +9,8 @@ $light: $md-grey-50;
 $light-invert: $md-black;
 $info: $md-grey-100;
 $info-invert: $md-black;
+$dark: $md-grey-200;
+$dark-invert: $md-black;
 $link: $md-green-600;
 $success: $md-green-400;
 $danger: $md-red-400;
@@ -40,7 +42,7 @@ $menu-item-hover-background-color: rgba(0, 0, 0, 0);
   text-align: center !important;
 }
 
-@import 'bulma/bulma.sass';
+@import '~bulma/bulma.sass';
 
 @media (min-width: $desktop) {
   .reverse-columns {
@@ -59,7 +61,7 @@ $menu-item-hover-background-color: rgba(0, 0, 0, 0);
   }
 }
 
-@import 'prismjs-material-theme/sass/lighter.scss';
+@import '~prismjs-material-theme/sass/lighter.scss';
 
 .number {
   all: initial;
@@ -96,3 +98,5 @@ $prismjs-theme-sass-core--code-background: $md-grey-100;
 }
 
 @include prismjs-theme-sass-core--generate();
+
+@import '~react-github-button/assets/style.css';

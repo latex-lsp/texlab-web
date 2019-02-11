@@ -35,6 +35,7 @@
     "prismjs-material-theme": "^1.0.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-github-button": "^0.1.11",
     "react-helmet": "^5.2.0",
     "react-visibility-sensor": "^5.0.2"
   },

@@ -1,7 +1,14 @@
 const path = require('path');
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
+
+  createRedirect({
+    fromPath: `/download`,
+    isPermanent: true,
+    redirectInBrowser: true,
+    toPath: `https://marketplace.visualstudio.com/items?itemName=efoerster.texlab`,
+  });
 
   const component = path.resolve('src/templates/docs.tsx');
   return graphql(`

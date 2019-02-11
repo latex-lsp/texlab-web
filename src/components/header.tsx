@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   Button,
   Container,
+  Content,
   Navbar,
   NavbarBrand,
   NavbarBurger,
@@ -61,11 +62,16 @@ export class Header extends React.Component<{}, HeaderState> {
             <NavbarStart>
               <NavbarLink to="/">Home</NavbarLink>
               <NavbarLink to="/docs">Docs</NavbarLink>
+              <Content isHidden="desktop">
+                <NavbarLink to="/download">Download</NavbarLink>
+              </Content>
             </NavbarStart>
             <NavbarEnd isHidden="touch">
               <NavbarGithubItem />
               <NavbarItem>
-                <Button isColor="primary">Download</Button>
+                <Link to="/download">
+                  <Button isColor="primary">Download</Button>
+                </Link>
               </NavbarItem>
             </NavbarEnd>
           </NavbarMenu>

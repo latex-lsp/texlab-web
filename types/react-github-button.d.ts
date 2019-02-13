@@ -1,6 +1,6 @@
 declare interface GitHubButtonProps {
   type: 'stargazers' | 'watchers' | 'fork';
-  size: 'default' | 'large';
+  size?: 'large';
   namespace: string;
   repo: string;
 }

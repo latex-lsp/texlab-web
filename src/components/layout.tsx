@@ -27,14 +27,14 @@ export const Layout: React.FC = ({ children }) => {
           <Content isSize="small">
             <p>
               The source code is licensed under the{' '}
-              <a target="https://github.com/efoerster/texlab/blob/master/LICENSE">
+              <a href="https://github.com/efoerster/texlab/blob/master/LICENSE">
                 MIT license
               </a>
               .
             </p>
             <p>
               The website content is licensed under{' '}
-              <a target="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                 CC ANS 4.0 license
               </a>
               .
@@ -42,7 +42,6 @@ export const Layout: React.FC = ({ children }) => {
             <br />
             <GitHubButton
               type="stargazers"
-              size="default"
               namespace="efoerster"
               repo="texlab"
             />

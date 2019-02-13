@@ -20,7 +20,7 @@ In order to start the server, you will need to install:
 > **Note**: Please make sure that both dependencies are in your `PATH` environment variable.
 > If you use MikTeX, then ensure that `kpsewhich` is installed.
 
-## Supported editors
+## Supported Editors
 
 The server is designed to be independent of the editor. It can be used with any editor that implements the Language Server Protocol.
 We currently only provide an [extension](https://github.com/efoerster/texlab-vscode) for [Visual Studio Code](https://code.visualstudio.com).
@@ -32,7 +32,7 @@ After you installed an editor extension, you can simply start editing LaTeX file
 All editing features work out-of-the-box.
 Moreover, it is not necessary to configure master/child files, since they are detected automatically.
 
-### Build system
+### Build System
 
 Documents can be built by invoking the [`latex.build`](/docs/reference#latexbuild) command
 or by enabling the [`latex.build.onSave`](/docs/reference#latexbuildonsave) feature.

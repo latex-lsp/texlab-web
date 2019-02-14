@@ -63,13 +63,13 @@ export class Header extends React.Component<{}, HeaderState> {
               <NavbarLink to="/">Home</NavbarLink>
               <NavbarLink to="/docs">Docs</NavbarLink>
               <Content isHidden="desktop">
-                <NavbarLink to="/download">Download</NavbarLink>
+                <NavbarLink to="/#download">Download</NavbarLink>
               </Content>
             </NavbarStart>
             <NavbarEnd isHidden="touch">
               <NavbarGithubItem />
               <NavbarItem>
-                <Link to="/download">
+                <Link to="/#download">
                   <Button isColor="primary">Download</Button>
                 </Link>
               </NavbarItem>

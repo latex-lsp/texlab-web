@@ -1,5 +1,6 @@
 import {
   faCheckCircle,
+  faCogs,
   faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -24,31 +25,43 @@ import { SERVER_FEATURES } from '../data/features';
 
 import { Link } from 'gatsby';
 import Icon from '../assets/images/icon.svg';
+import CodeLogo from '../assets/images/vscode.svg';
 import BibtexVideo from '../assets/videos/bibtex.webm';
 import CompletionVideo from '../assets/videos/completion.webm';
 import RenameVideo from '../assets/videos/rename.webm';
 import { Video } from '../components/video';
 
+const LogoImage: React.FC<{ src: string }> = ({ src }) => (
+  <Image className="center-img" isSize="128x128" src={src} />
+);
+
+const Sections: React.FC = ({ children }) => (
+  <div className="has-text-centered">
+    {React.Children.map(children, (child, i) => (
+      <div className={i % 2 === 1 ? 'has-background-info' : undefined}>
+        {child}
+      </div>
+    ))}
+  </div>
+);
+
 interface FeatureSectionProps {
   title: string;
   videoSource: string;
-  isEven?: boolean;
+  reversed?: boolean;
 }
 
 const FeatureSection: React.FC<FeatureSectionProps> = ({
   title,
   videoSource,
-  isEven = false,
+  reversed = false,
   children,
 }) => (
-  <Section
-    hasTextAlign="centered"
-    className={isEven ? 'has-background-info' : undefined}>
+  <Section>
     <Container>
       <Columns
-        isCentered={true}
         isVCentered={true}
-        className={isEven ? 'reverse-columns' : undefined}>
+        className={reversed ? 'reverse-columns' : undefined}>
         <Column>
           <Video src={videoSource} />
         </Column>
@@ -93,6 +106,26 @@ const FeatureTable: React.FC = () => {
   );
 };
 
+interface DownloadColumnProps {
+  title: string;
+  downloadLink: string;
+}
+
+const DownloadColumn: React.FC<DownloadColumnProps> = ({
+  title,
+  downloadLink,
+  children,
+}) => (
+  <Column isSize="1/3">
+    <div className="center-img">{children}</div>
+    <br />
+    <Subtitle>{title}</Subtitle>
+    <Button isColor="primary" isSize="medium" href={downloadLink}>
+      Download
+    </Button>
+  </Column>
+);
+
 const IndexPage: React.FC = () => {
   return (
     <Layout>
@@ -104,7 +137,7 @@ const IndexPage: React.FC = () => {
         <HeroBody>
           <Container hasTextAlign="centered">
             <Column isOffset="1/3" isSize="1/3">
-              <Image className="center-img" isSize="128x128" src={Icon} />
+              <LogoImage src={Icon} />
               <Title>TexLab</Title>
               <Subtitle>
                 A cross-platform implementation of the Language Server Protocol
@@ -119,34 +152,54 @@ const IndexPage: React.FC = () => {
           </Container>
         </HeroBody>
       </Hero>
-      <FeatureSection title="Code Completion" videoSource={CompletionVideo}>
-        TexLab analyzes your files as you type and provides smart code
-        completion results. After parsing your files, all included packages will
-        be indexed in the background. By using the TeX engine, we can precisely
-        determine all commands and environments that are defined in these
-        packages.
-      </FeatureSection>
-      <FeatureSection
-        isEven={true}
-        title="Project-wide Operations"
-        videoSource={RenameVideo}>
-        The server builds a dependency graph of all files in the currently
-        opened workspace. This allows us to perform project-wide refactoring
-        features to all affected files. No need to use magic comments or
-        configuration files anymore.
-      </FeatureSection>
-      <FeatureSection title="BibTeX Integration" videoSource={BibtexVideo}>
-        TexLab has excellent support for BibTeX. It features code completion,
-        syntax checking, navigation features and an opinionated code formatter.
-      </FeatureSection>
-      <Section hasTextAlign="centered" className="has-background-info">
-        <Title>Feature List</Title>
-        <Container>
-          <Content>
-            <FeatureTable />
-          </Content>
-        </Container>
-      </Section>
+      <Sections>
+        <FeatureSection title="Code Completion" videoSource={CompletionVideo}>
+          TexLab analyzes your files as you type and provides smart code
+          completion results. After parsing your files, all included packages
+          will be indexed in the background. By using the TeX engine, we can
+          precisely determine all commands and environments that are defined in
+          these packages.
+        </FeatureSection>
+        <FeatureSection
+          title="Project-wide Operations"
+          videoSource={RenameVideo}
+          reversed={true}>
+          The server builds a dependency graph of all files in the currently
+          opened workspace. This allows us to perform project-wide refactoring
+          features to all affected files. No need to use magic comments or
+          configuration files anymore.
+        </FeatureSection>
+        <FeatureSection title="BibTeX Integration" videoSource={BibtexVideo}>
+          TexLab has excellent support for BibTeX. It features code completion,
+          syntax checking, navigation features and an opinionated code
+          formatter.
+        </FeatureSection>
+        <Section>
+          <Title>Feature List</Title>
+          <Container>
+            <Content>
+              <FeatureTable />
+            </Content>
+          </Container>
+        </Section>
+        <Section>
+          <Title id="download">Download</Title>
+          <Container>
+            <Columns isCentered={true} isVCentered={true}>
+              <DownloadColumn
+                title="Visual Studio Code"
+                downloadLink="https://marketplace.visualstudio.com/items?itemName=efoerster.texlab">
+                <LogoImage src={CodeLogo} />
+              </DownloadColumn>
+              <DownloadColumn
+                title="Standalone"
+                downloadLink="https://github.com/efoerster/texlab/releases">
+                <FontAwesomeIcon icon={faCogs} size="8x" />
+              </DownloadColumn>
+            </Columns>
+          </Container>
+        </Section>
+      </Sections>
     </Layout>
   );
 };

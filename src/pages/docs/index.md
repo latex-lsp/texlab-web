@@ -24,7 +24,7 @@ In order to start the server, you will need to install:
 
 The server is designed to be independent of the editor. It can be used with any editor that implements the Language Server Protocol.
 We currently only provide an [extension](https://github.com/efoerster/texlab-vscode) for [Visual Studio Code](https://code.visualstudio.com).
-Please see the [download page](/download) for installation instructions.
+Please see the [download page](/#download) for installation instructions.
 
 ## Usage
 

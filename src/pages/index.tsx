@@ -120,37 +120,24 @@ const IndexPage: React.FC = () => {
         </HeroBody>
       </Hero>
       <FeatureSection title="Code Completion" videoSource={CompletionVideo}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
+        TexLab analyzes your files as you type and provides smart code
+        completion results. After parsing your files, all included packages will
+        be indexed in the background. By using the TeX engine, we can precisely
+        determine all commands and environments that are defined in these
+        packages.
       </FeatureSection>
-      <FeatureSection isEven={true} title="Rename" videoSource={RenameVideo}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
+      <FeatureSection
+        isEven={true}
+        title="Project-wide Operations"
+        videoSource={RenameVideo}>
+        The server builds a dependency graph of all files in the currently
+        opened workspace. This allows us to perform project-wide refactoring
+        features to all affected files. No need to use magic comments or
+        configuration files anymore.
       </FeatureSection>
-      <FeatureSection title="BibTeX" videoSource={BibtexVideo}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
+      <FeatureSection title="BibTeX Integration" videoSource={BibtexVideo}>
+        TexLab has excellent support for BibTeX. It features code completion,
+        syntax checking, navigation features and an opinionated code formatter.
       </FeatureSection>
       <Section hasTextAlign="centered" className="has-background-info">
         <Title>Feature List</Title>

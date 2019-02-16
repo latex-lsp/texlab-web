@@ -11,7 +11,7 @@ export const Layout: React.FC = ({ children }) => {
     <>
       <Header />
       {children}
-      <Footer className="has-background-dark">
+      <Footer className="has-background-light">
         <Container>
           <Content>
             <p>

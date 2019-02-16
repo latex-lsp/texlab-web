@@ -1,32 +1,53 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
-@import '~material-colors/dist/colors.scss';
+
+$transparent: rgba(0, 0, 0, 0);
+$black: rgba(#000000, 0.87);
+$black-ter: rgba(#000000, 0.6);
+$white: #ffffff;
+$grey: #eeeeee;
+$grey-light: #f5f5f5;
+$grey-lighter: #ffffff;
+$green: #00e676;
+$green-light: #66ffa6;
+$green-dark: #00b248;
+$green-darker: #2e7d32;
+$red: #ff3d00;
+$divider: rgba(#000000, 0.12);
 
 $family-sans-serif: 'Nunito', sans-serif;
-$primary: $md-green-a400;
-$primary-invert: $md-white;
+$text: $black;
+$text-invert: $white;
 
-$light: $md-grey-50;
-$light-invert: $md-black;
-$info: $md-grey-100;
-$info-invert: $md-black;
-$dark: $md-grey-200;
-$dark-invert: $md-black;
-$link: $md-green-600;
-$success: $md-green-400;
-$danger: $md-red-400;
+$primary: $green-dark;
+$primary-invert: $text-invert;
 
-$content-blockquote-background-color: rgba($md-green-a100, 0.3);
+$light: $grey-light;
+$light-invert: $text;
+
+$info: $light;
+$info-invert: $light-invert;
+
+$link: $green-darker;
+$success: $primary;
+$danger: $red;
+
+$selection: rgba($green-light, 0.4);
+::selection {
+  background-color: $selection;
+}
+
+$content-blockquote-background-color: $selection;
 $content-blockquote-border-left: 5px solid $primary;
 
 $navbar-height: 3.5rem;
 $navbar-item-img-max-height: 40px;
 
 $menu-item-hover-color: $link;
-$menu-item-hover-background-color: rgba(0, 0, 0, 0);
+$menu-item-hover-background-color: $transparent;
+$menu-label-color: $black-ter;
 
-::selection {
-  background-color: $md-green-a100;
-}
+$table-cell-border: 1px solid $divider !important;
+$table-striped-row-even-background-color: $grey;
 
 .navbar-brand > a > img {
   width: auto;
@@ -70,31 +91,31 @@ $menu-item-hover-background-color: rgba(0, 0, 0, 0);
   }
 }
 
-$prismjs-theme-sass-core--selection-background: $md-green-a100;
+$prismjs-theme-sass-core--selection-background: $selection;
 $prismjs-theme-sass-core--base-font-size: 14px;
-$prismjs-theme-sass-core--pre-color: $md-black;
-$prismjs-theme-sass-core--pre-background: $md-grey-100;
-$prismjs-theme-sass-core--code-color: $md-black;
-$prismjs-theme-sass-core--code-background: $md-grey-100;
+$prismjs-theme-sass-core--pre-color: $text;
+$prismjs-theme-sass-core--pre-background: $light;
+$prismjs-theme-sass-core--code-color: $text;
+$prismjs-theme-sass-core--code-background: $light;
 
 @mixin prismjs-theme-sass-core--token-attr-value() {
-  color: $md-light-green-600;
+  color: $green-dark;
 }
 
 @mixin prismjs-theme-sass-core--token-attribute() {
-  color: $md-light-green-600;
+  color: $green-dark;
 }
 
 @mixin prismjs-theme-sass-core--token-pseudo-class() {
-  color: $md-light-green-600;
+  color: $green-dark;
 }
 
 @mixin prismjs-theme-sass-core--token-pseudo-element() {
-  color: $md-light-green-600;
+  color: $green-dark;
 }
 
 @mixin prismjs-theme-sass-core--token-string() {
-  color: $md-light-green-700;
+  color: $green-dark;
 }
 
 @include prismjs-theme-sass-core--generate();

@@ -30,7 +30,6 @@
     "gatsby-remark-prismjs": "^3.2.2",
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-transformer-remark": "^2.2.0",
-    "material-colors": "^1.2.6",
     "prismjs": "^1.15.0",
     "prismjs-material-theme": "^1.0.0",
     "react": "^16.6.3",

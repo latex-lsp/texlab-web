@@ -32,6 +32,10 @@ export const SEO: React.FC<SEOProps> = ({ title, keywords = [] }) => {
     const { description } = siteMetadata;
     const meta = [
       {
+        name: 'google-site-verification',
+        content: 'msVW73AhGsb_-2nAN-Cf7zh5REvtp-s37uargFRal0s',
+      },
+      {
         name: 'description',
         content: description,
       },
@@ -46,10 +50,6 @@ export const SEO: React.FC<SEOProps> = ({ title, keywords = [] }) => {
       {
         property: 'og:type',
         content: 'website',
-      },
-      {
-        property: 'google-site-verification',
-        content: 'msVW73AhGsb_-2nAN-Cf7zh5REvtp-s37uargFRal0s',
       },
     ];
 

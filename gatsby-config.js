@@ -17,10 +17,10 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'texlab',
-        short_name: 'texlab',
+        name: 'TexLab',
+        short_name: 'TexLab',
         start_url: '/',
-        background_color: '#00e676',
+        background_color: '#ffffff',
         theme_color: '#00e676',
         display: 'minimal-ui',
         icon: 'src/assets/images/icon.png',

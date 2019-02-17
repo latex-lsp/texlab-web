@@ -47,6 +47,10 @@ export const SEO: React.FC<SEOProps> = ({ title, keywords = [] }) => {
         property: 'og:type',
         content: 'website',
       },
+      {
+        property: 'google-site-verification',
+        content: 'msVW73AhGsb_-2nAN-Cf7zh5REvtp-s37uargFRal0s',
+      },
     ];
 
     if (keywords.length > 0) {

@@ -1,9 +1,12 @@
-import { Column, Columns, Container, Content, Section } from 'bloomer';
+import { Content } from 'bloomer';
 import { graphql } from 'gatsby';
 import React from 'react';
-import { Layout } from '../components/layout';
+import {
+  MenuCategory,
+  MenuItem,
+  NavigableLayout,
+} from '../components/navigableLayout';
 import { SEO } from '../components/seo';
-import { MenuCategory, MenuItem, SidebarNav } from '../components/sidebarNav';
 
 interface Frontmatter {
   path: string;
@@ -14,18 +17,6 @@ interface Frontmatter {
 interface Edge {
   node: {
     frontmatter: Frontmatter;
-  };
-}
-
-interface DocsTemplateProps {
-  data: {
-    markdownRemark: {
-      frontmatter: Frontmatter;
-      html: string;
-    };
-    allMarkdownRemark: {
-      edges: Edge[];
-    };
   };
 }
 
@@ -48,28 +39,31 @@ function extractCategories(edges: Edge[]): MenuCategory[] {
   return categories;
 }
 
+interface DocsTemplateProps {
+  data: {
+    markdownRemark: {
+      frontmatter: Frontmatter;
+      html: string;
+    };
+    allMarkdownRemark: {
+      edges: Edge[];
+    };
+  };
+}
+
 export const DocsTemplate: React.FC<DocsTemplateProps> = ({ data }) => {
   const { markdownRemark, allMarkdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
+  const { title, path } = frontmatter;
+
+  const activeItem: MenuItem = { name: title, path };
   const categories = extractCategories(allMarkdownRemark.edges);
+
   return (
-    <Layout>
+    <NavigableLayout activeItem={activeItem} categories={categories}>
       <SEO title={frontmatter.title} />
-      <Container>
-        <Columns>
-          <Column isSize="3/4">
-            <Section>
-              <Content dangerouslySetInnerHTML={{ __html: html }} />
-            </Section>
-          </Column>
-          <Column>
-            <Section>
-              <SidebarNav categories={categories} />
-            </Section>
-          </Column>
-        </Columns>
-      </Container>
-    </Layout>
+      <Content dangerouslySetInnerHTML={{ __html: html }} />
+    </NavigableLayout>
   );
 };
 

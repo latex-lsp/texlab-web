@@ -3,22 +3,17 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import { Layout } from '../components/layout';
 import { SEO } from '../components/seo';
-import { SidebarNav, SidebarNavNode } from '../components/sidebarNav';
+import { MenuCategory, MenuItem, SidebarNav } from '../components/sidebarNav';
 
 interface Frontmatter {
   path: string;
   title: string;
-}
-
-interface Heading {
-  value: string;
-  depth: number;
+  category: string;
 }
 
 interface Edge {
   node: {
     frontmatter: Frontmatter;
-    headings: Heading[];
   };
 }
 
@@ -34,33 +29,29 @@ interface DocsTemplateProps {
   };
 }
 
-export const DocsTemplate: React.FC<DocsTemplateProps> = ({ data }) => {
-  const {
-    markdownRemark: { frontmatter, html },
-    allMarkdownRemark: { edges },
-  } = data;
+function extractCategories(edges: Edge[]): MenuCategory[] {
+  const categories: MenuCategory[] = [];
 
-  const navNodes: SidebarNavNode[] = [];
-  for (const node of edges.map(x => x.node)) {
-    const {
-      frontmatter: { title, path },
-    } = node;
+  for (const { node } of edges) {
+    const { frontmatter } = node;
+    const { title, path, category } = frontmatter;
+    const item: MenuItem = { name: title, path };
 
-    const children = node.headings
-      .filter(x => x.depth > 1)
-      .map(({ value }) => ({
-        name: value,
-        path: `${path}#${value}`.replace(/\s+/g, '-').toLowerCase(),
-        children: [],
-      }));
-
-    navNodes.push({
-      name: title,
-      path,
-      children,
-    });
+    const currentCategory = categories.find(x => x.name === category);
+    if (currentCategory) {
+      currentCategory.items.push(item);
+    } else {
+      categories.push({ name: category, items: [item] });
+    }
   }
 
+  return categories;
+}
+
+export const DocsTemplate: React.FC<DocsTemplateProps> = ({ data }) => {
+  const { markdownRemark, allMarkdownRemark } = data;
+  const { frontmatter, html } = markdownRemark;
+  const categories = extractCategories(allMarkdownRemark.edges);
   return (
     <Layout>
       <SEO title={frontmatter.title} />
@@ -73,7 +64,7 @@ export const DocsTemplate: React.FC<DocsTemplateProps> = ({ data }) => {
           </Column>
           <Column>
             <Section>
-              <SidebarNav label="Docs" nodes={navNodes} />
+              <SidebarNav categories={categories} />
             </Section>
           </Column>
         </Columns>
@@ -91,6 +82,7 @@ export const pageQuery = graphql`
       frontmatter {
         path
         title
+        category
       }
     }
     allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___order] }) {
@@ -99,10 +91,7 @@ export const pageQuery = graphql`
           frontmatter {
             path
             title
-          }
-          headings(depth: h2) {
-            value
-            depth
+            category
           }
         }
       }

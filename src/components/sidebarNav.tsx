@@ -2,33 +2,35 @@ import { Menu, MenuLabel, MenuList } from 'bloomer';
 import { Link } from 'gatsby';
 import React from 'react';
 
-export interface SidebarNavNode {
+export interface MenuItem {
   name: string;
   path: string;
-  children: SidebarNavNode[];
+}
+
+export interface MenuCategory {
+  name: string;
+  items: MenuItem[];
 }
 
 interface SidebarNavProps {
-  label: string;
-  nodes: SidebarNavNode[];
+  categories: MenuCategory[];
 }
 
-export const SidebarNav: React.FC<SidebarNavProps> = ({ label, nodes }) => {
-  const renderNode = (node: SidebarNavNode, key: number) => {
-    return (
-      <li key={key}>
-        <Link to={node.path}>{node.name}</Link>
-        {node.children.length > 0 && (
-          <MenuList>{node.children.map(renderNode)}</MenuList>
-        )}
-      </li>
-    );
-  };
+export const SidebarNav: React.FC<SidebarNavProps> = ({ categories }) => {
+  const renderItem = (item: MenuItem, key: number) => (
+    <li key={key}>
+      <Link to={item.path}>{item.name}</Link>
+    </li>
+  );
 
   return (
     <Menu>
-      <MenuLabel>{label}</MenuLabel>
-      <MenuList>{nodes.map(renderNode)}</MenuList>
+      {categories.map((category, key) => (
+        <>
+          <MenuLabel key={key}>{category.name}</MenuLabel>
+          <MenuList>{category.items.map(renderItem)}</MenuList>
+        </>
+      ))}
     </Menu>
   );
 };

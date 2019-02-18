@@ -1,129 +1,17 @@
 ---
-path: '/docs/reference'
-title: 'Reference'
-order: 1
+path: '/docs/reference/custom-messages'
+title: 'Custom Messages'
+category: 'Reference'
+order: 3
 ---
 
-# Reference
-
-## Commands
-
-This section describes the commands that a language client should define.
-These commands are invoked remotely with [custom messages](#custom-messages).
-
----
-
-### `latex.build`
-
-Builds the current file.
-
-**Hotkey:** `F5`
-
-**Remote call:** [`textDocument/build`](#build-request)
-
----
-
-### `latex.build.cancel`
-
-Cancels the current build. This command needs to cancel the [`textDocument/build`](#build-request) request.
-
-**Hotkey:** `Ctrl+Break`
-
-**Remote call:** [`$/cancelRequest`](https://microsoft.github.io/language-server-protocol/specification#cancelRequest)
-
----
-
-### `latex.forwardSearch`
-
-Performs a forward search from the current file.
-
-**Hotkey:** `Ctrl+Alt+F`
-
-**Remote call:** [`textDocument/forwardSearch`](#forward-search-request)
-
----
-
-## Configuration
-
-This section describes the configuration settings that the server will query from the extension.
-
----
-
-### `latex.build.executable`
-
-Defines the executable of the LaTeX build tool.
-
-**Type:** `string`
-
-**Default value:** `latexmk`
-
----
-
-### `latex.build.args`
-
-Defines additional arguments that are passed to the configured LaTeX build tool.
-
-**Type:** `string[]`
-
-**Default value:** `["-pdf", "-interaction=nonstopmode", "-synctex=1"]`
-
----
-
-### `latex.build.onSave`
-
-Build after saving a file.
-
-**Type:** `boolean`
-
-**Default value:** `false`
-
----
-
-### `latex.forwardSearch.executable`
-
-Defines the executable of the PDF previewer.
-The previewer needs to support [SyncTeX](http://www.tug.org/TUGboat/tb29-3/tb93laurens.pdf).
-
-**Type:** `string | null`
-
-**Default value:** `null`
-
----
-
-### `latex.forwardSearch.args`
-
-Defines additional arguments that are passed to the configured previewer to perform the forward search.
-The placeholders `%f, %p, %l` will be replaced by the server.
-
-**Placeholders:**
-
-- `%f`: The path of the current TeX file.
-- `%p`: The path of the current PDF file.
-- `%l`: The current line number.
-
-**Type:** `string[]`
-
-**Default value:** `[]`
-
----
-
-### `bibtex.formatting.lineLength`
-
-Defines the maximum amount of characters per line (0 = disable) when formatting BibTeX files.
-
-**Type:** `integer`
-
-**Default value:** `120`
-
----
-
-## Custom Messages
+# Custom Messages
 
 We extend the [Language Server Protocol](https://microsoft.github.io/language-server-protocol/specification)
 with custom messages to provide better LaTeX integration.
 These messages are _optional_ and it is up to the client to support them.
 
-### Build Request
+## Build Request
 
 The build request is sent from the client to the server to build a given LaTeX document.
 
@@ -171,7 +59,7 @@ enum BuildStatus {
 }
 ```
 
-### Forward Search Request
+## Forward Search Request
 
 The forward search request is sent from the client to the server when the user requests a forward search via SyncTeX.
 
@@ -215,7 +103,7 @@ enum ForwardSearchStatus {
 }
 ```
 
-### Progress Notification
+## Progress Notification
 
 The progress notification is sent from the server to the client to ask the client to indicate progress.
 

@@ -38,10 +38,8 @@ $selection: rgba($green-light, 0.4);
   background-color: $selection;
 }
 
-$primary-border-left: 5px solid $primary;
-
 $content-blockquote-background-color: $selection;
-$content-blockquote-border-left: $primary-border-left;
+$content-blockquote-border-left: 5px solid $primary;
 
 $navbar-height: 3.5rem;
 $navbar-item-img-max-height: 40px;
@@ -50,8 +48,12 @@ $menu-item-active-color: $text;
 $menu-item-active-background-color: $transparent;
 $menu-label-color: $black-ter;
 
+.menu-list a {
+  border-left: 5px solid $transparent;
+}
+
 .menu-list a.is-active {
-  border-left: $primary-border-left;
+  border-color: $primary;
 }
 
 $table-cell-border: 1px solid $divider !important;

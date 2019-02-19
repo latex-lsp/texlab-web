@@ -66,7 +66,7 @@ export const SEO: React.FC<SEOProps> = ({ title, keywords = [] }) => {
           lang: 'en-US',
         }}
         title={title}
-        titleTemplate={`%s | ${siteMetadata.title}`}
+        titleTemplate={`%s - ${siteMetadata.title}`}
         meta={meta}
       />
     );

@@ -1,4 +1,3 @@
-import { render } from 'github-buttons';
 import React from 'react';
 
 interface GithubButtonProps {
@@ -26,7 +25,10 @@ export class GithubButton extends React.Component<GithubButtonProps> {
       'data-text': text,
       'aria-label': ariaLabel,
     };
-    render(options, element => container.appendChild(element));
+
+    import('github-buttons').then(({ render }) =>
+      render(options, element => container.appendChild(element)),
+    );
   }
 
   public render() {

@@ -9,8 +9,7 @@ $grey-light: #f5f5f5;
 $grey-lighter: #ffffff;
 $green: #00e676;
 $green-light: #66ffa6;
-$green-dark: #00b248;
-$green-darker: #2e7d32;
+$green-dark: #087f23;
 $red: #ff3d00;
 $divider: rgba(#000000, 0.12);
 
@@ -18,8 +17,11 @@ $family-sans-serif: 'Nunito', sans-serif;
 $text: $black;
 $text-invert: $white;
 
-$primary: $green-dark;
-$primary-invert: $text-invert;
+$primary: $green;
+$primary-invert: $text;
+
+$dark: $green-dark;
+$dark-invert: $white;
 
 $light: $grey-light;
 $light-invert: $text;
@@ -27,8 +29,8 @@ $light-invert: $text;
 $info: $light;
 $info-invert: $light-invert;
 
-$link: $green-darker;
-$success: $primary;
+$link: $dark;
+$success: $dark;
 $danger: $red;
 
 $selection: rgba($green-light, 0.4);
@@ -36,14 +38,21 @@ $selection: rgba($green-light, 0.4);
   background-color: $selection;
 }
 
+$primary-border-left: 5px solid $primary;
+
 $content-blockquote-background-color: $selection;
-$content-blockquote-border-left: 5px solid $primary;
+$content-blockquote-border-left: $primary-border-left;
 
 $navbar-height: 3.5rem;
 $navbar-item-img-max-height: 40px;
 
-$menu-item-active-background-color: $primary;
+$menu-item-active-color: $text;
+$menu-item-active-background-color: $transparent;
 $menu-label-color: $black-ter;
+
+.menu-list a.is-active {
+  border-left: $primary-border-left;
+}
 
 $table-cell-border: 1px solid $divider !important;
 $table-striped-row-even-background-color: $grey;
@@ -98,23 +107,23 @@ $prismjs-theme-sass-core--code-color: $text;
 $prismjs-theme-sass-core--code-background: $light;
 
 @mixin prismjs-theme-sass-core--token-attr-value() {
-  color: $green-dark;
+  color: $dark;
 }
 
 @mixin prismjs-theme-sass-core--token-attribute() {
-  color: $green-dark;
+  color: $dark;
 }
 
 @mixin prismjs-theme-sass-core--token-pseudo-class() {
-  color: $green-dark;
+  color: $dark;
 }
 
 @mixin prismjs-theme-sass-core--token-pseudo-element() {
-  color: $green-dark;
+  color: $dark;
 }
 
 @mixin prismjs-theme-sass-core--token-string() {
-  color: $green-dark;
+  color: $dark;
 }
 
 @include prismjs-theme-sass-core--generate();

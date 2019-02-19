@@ -12,7 +12,6 @@ import {
   Content,
   Hero,
   HeroBody,
-  Image,
   Section,
   Subtitle,
   Table,
@@ -31,8 +30,10 @@ import CompletionVideo from '../assets/videos/completion.webm';
 import RenameVideo from '../assets/videos/rename.webm';
 import { Video } from '../components/video';
 
-const LogoImage: React.FC<{ src: string }> = ({ src }) => (
-  <Image className="center-img" isSize="128x128" src={src} />
+const LogoImage: React.FC<{ alt: string; src: string }> = ({ alt, src }) => (
+  <figure className="image is-128x128 center-img">
+    <img alt={alt} src={src} />
+  </figure>
 );
 
 const Sections: React.FC = ({ children }) => (
@@ -120,7 +121,7 @@ const DownloadColumn: React.FC<DownloadColumnProps> = ({
     <div className="center-img">{children}</div>
     <br />
     <Subtitle>{title}</Subtitle>
-    <Button isColor="primary" isSize="medium" href={downloadLink}>
+    <Button isColor="dark" isSize="medium" href={downloadLink}>
       Download
     </Button>
   </Column>
@@ -137,7 +138,7 @@ const IndexPage: React.FC = () => {
         <HeroBody>
           <Container hasTextAlign="centered">
             <Column isOffset="1/3" isSize="1/3">
-              <LogoImage src={Icon} />
+              <LogoImage alt="TexLab logo" src={Icon} />
               <Title>TexLab</Title>
               <Subtitle>
                 A cross-platform implementation of the Language Server Protocol
@@ -145,7 +146,7 @@ const IndexPage: React.FC = () => {
               </Subtitle>
             </Column>
             <Link to="/docs">
-              <Button isColor="primary" isSize="large">
+              <Button isColor="dark" isOutlined={false} isSize="large">
                 Get Started
               </Button>
             </Link>
@@ -189,7 +190,7 @@ const IndexPage: React.FC = () => {
               <DownloadColumn
                 title="Visual Studio Code"
                 downloadLink="https://marketplace.visualstudio.com/items?itemName=efoerster.texlab">
-                <LogoImage src={CodeLogo} />
+                <LogoImage alt="Visual Studio Code logo" src={CodeLogo} />
               </DownloadColumn>
               <DownloadColumn
                 title="Standalone"

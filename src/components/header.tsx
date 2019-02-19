@@ -20,7 +20,10 @@ import Logo from '../assets/images/logo.svg';
 const NavbarGithubItem = ({ hideOnDesktop = false }) => {
   const isHidden = hideOnDesktop ? 'desktop' : undefined;
   return (
-    <NavbarItem href="https://github.com/efoerster/texlab" isHidden={isHidden}>
+    <NavbarItem
+      href="https://github.com/efoerster/texlab"
+      aria-label="GitHub"
+      isHidden={isHidden}>
       <FontAwesomeIcon icon={faGithub} size="lg" />
     </NavbarItem>
   );
@@ -70,7 +73,9 @@ export class Header extends React.Component<{}, HeaderState> {
               <NavbarGithubItem />
               <NavbarItem>
                 <Link to="/#download">
-                  <Button isColor="primary">Download</Button>
+                  <Button isColor="dark" isOutlined={true}>
+                    Download
+                  </Button>
                 </Link>
               </NavbarItem>
             </NavbarEnd>

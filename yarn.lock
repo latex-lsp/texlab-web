@@ -5079,6 +5079,11 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
+github-buttons@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/github-buttons/-/github-buttons-2.0.1.tgz#cd62346f832671d4b940cd325772172567d7c029"
+  integrity sha512-Qo154Dvc0qe0RWJRgEuat3sJ8iNWx1m1wQES/K29t9CEhQ/Ls2Btce+/Nb/DgJgOThzOt00KNQD5y0to6pxfbA==
+
 github-from-package@0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/github-from-package/-/github-from-package-0.0.0.tgz#97fb5d96bfde8973313f20e8288ef9a167fa64ce"
@@ -8922,13 +8927,6 @@ react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
   integrity sha512-XzgvowFrwDo6TWcpJ/WTiarb9UI6lhA4PMzS7n1joK3sHfBBBOQHUc0U4u57D6DWO9vHv6lVSWx2Q/Ymfyv4hw==
-
-react-github-button@^0.1.11:
-  version "0.1.11"
-  resolved "https://registry.yarnpkg.com/react-github-button/-/react-github-button-0.1.11.tgz#fc61e1f1e1371169d3618c1ba37306ba04081e56"
-  integrity sha1-/GHh8eE3EWnTYYwbo3MGugQIHlY=
-  dependencies:
-    prop-types "^15.5.10"
 
 react-helmet@^5.2.0:
   version "5.2.0"

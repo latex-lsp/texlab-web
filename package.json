@@ -30,11 +30,11 @@
     "gatsby-remark-prismjs": "^3.2.2",
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-transformer-remark": "^2.2.0",
+    "github-buttons": "^2.0.1",
     "prismjs": "^1.15.0",
     "prismjs-material-theme": "^1.0.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-github-button": "^0.1.11",
     "react-helmet": "^5.2.0",
     "react-visibility-sensor": "^5.0.2"
   },

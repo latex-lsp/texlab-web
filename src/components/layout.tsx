@@ -1,7 +1,7 @@
 import { Container, Content, Footer } from 'bloomer';
 import React from 'react';
-import GitHubButton from 'react-github-button';
 
+import { GithubButton } from './githubButton';
 import { Header } from './header';
 
 import '../styles/main.scss';
@@ -40,10 +40,13 @@ export const Layout: React.FC = ({ children }) => {
               .
             </p>
             <br />
-            <GitHubButton
-              type="stargazers"
-              namespace="efoerster"
-              repo="texlab"
+            <GithubButton
+              href="https://github.com/efoerster/texlab"
+              icon="star"
+              size="large"
+              showCount={true}
+              text="Star"
+              ariaLabel="Star efoerster/texlab on GitHub"
             />
           </Content>
         </Container>

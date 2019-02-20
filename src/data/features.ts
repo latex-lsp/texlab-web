@@ -1,88 +1,103 @@
+export type FeatureStatus =
+  | 'implemented'
+  | 'not-implemented'
+  | 'not-applicable';
+
 interface FeatureTableEntry {
   name: string;
-  latex: boolean;
-  bibtex: boolean;
+  latex: FeatureStatus;
+  bibtex: FeatureStatus;
 }
 
 export const SERVER_FEATURES: FeatureTableEntry[] = [
   {
     name: 'Code completion',
-    latex: true,
-    bibtex: true,
+    latex: 'implemented',
+    bibtex: 'implemented',
   },
   {
     name: 'Hover',
-    latex: true,
-    bibtex: true,
+    latex: 'implemented',
+    bibtex: 'implemented',
   },
   {
     name: 'Signature help',
-    latex: false,
-    bibtex: false,
+    latex: 'not-implemented',
+    bibtex: 'not-implemented',
   },
   {
     name: 'Goto declaration',
-    latex: false,
-    bibtex: false,
+    latex: 'not-applicable',
+    bibtex: 'not-applicable',
   },
   {
     name: 'Goto definition',
-    latex: true,
-    bibtex: true,
+    latex: 'implemented',
+    bibtex: 'implemented',
   },
   {
     name: 'Goto type definition',
-    latex: false,
-    bibtex: false,
+    latex: 'not-applicable',
+    bibtex: 'not-applicable',
   },
   {
     name: 'Find references',
-    latex: true,
-    bibtex: true,
+    latex: 'implemented',
+    bibtex: 'implemented',
   },
   {
     name: 'Document highlights',
-    latex: true,
-    bibtex: false,
+    latex: 'implemented',
+    bibtex: 'not-implemented',
   },
   {
     name: 'Document symbols',
-    latex: true,
-    bibtex: true,
+    latex: 'implemented',
+    bibtex: 'implemented',
   },
   {
     name: 'Code action',
-    latex: false,
-    bibtex: false,
+    latex: 'not-implemented',
+    bibtex: 'not-implemented',
   },
   {
     name: 'Code lens',
-    latex: false,
-    bibtex: false,
+    latex: 'not-implemented',
+    bibtex: 'not-implemented',
   },
   {
     name: 'Document link',
-    latex: true,
-    bibtex: true,
+    latex: 'implemented',
+    bibtex: 'implemented',
   },
   {
     name: 'Document color',
-    latex: false,
-    bibtex: false,
+    latex: 'not-implemented',
+    bibtex: 'not-implemented',
   },
   {
     name: 'Document formatting',
-    latex: false,
-    bibtex: true,
+    latex: 'not-implemented',
+    bibtex: 'implemented',
   },
   {
     name: 'Rename',
-    latex: true,
-    bibtex: true,
+    latex: 'implemented',
+    bibtex: 'implemented',
   },
   {
     name: 'Folding',
-    latex: true,
-    bibtex: true,
+    latex: 'implemented',
+    bibtex: 'implemented',
+  },
+  {
+    name: 'Build*',
+    latex: 'implemented',
+    bibtex: 'implemented',
+  },
+  {
+    name: 'Forward search*',
+    latex: 'implemented',
+    bibtex: 'not-applicable',
   },
 ];

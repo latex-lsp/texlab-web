@@ -1,6 +1,7 @@
 import {
   faCheckCircle,
   faCogs,
+  faQuestionCircle,
   faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,7 +21,7 @@ import {
 import React from 'react';
 import { Layout } from '../components/layout';
 import { SEO } from '../components/seo';
-import { SERVER_FEATURES } from '../data/features';
+import { FeatureStatus, SERVER_FEATURES } from '../data/features';
 
 import { Link } from 'gatsby';
 import Icon from '../assets/images/icon.svg';
@@ -76,34 +77,76 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
 );
 
 const FeatureTable: React.FC = () => {
-  const CheckmarkRow = ({ isChecked = false }) => (
-    <td className="center-column">
-      <FontAwesomeIcon
-        className={isChecked ? 'has-text-success' : 'has-text-danger'}
-        icon={isChecked ? faCheckCircle : faTimesCircle}
-      />
-    </td>
+  const ImplementedIcon = () => (
+    <FontAwesomeIcon
+      className="has-text-success"
+      icon={faCheckCircle}
+      title="implemented"
+    />
   );
 
+  const NotImplementedIcon = () => (
+    <FontAwesomeIcon
+      className="has-text-danger"
+      icon={faTimesCircle}
+      title="not implemented"
+    />
+  );
+
+  const NotApplicableIcon = () => (
+    <FontAwesomeIcon icon={faQuestionCircle} title="not applicable" />
+  );
+
+  const FeatureCell = ({ status }: { status: FeatureStatus }) => {
+    let CellIcon: () => JSX.Element;
+    switch (status) {
+      case 'implemented':
+        CellIcon = ImplementedIcon;
+        break;
+      case 'not-implemented':
+        CellIcon = NotImplementedIcon;
+        break;
+      case 'not-applicable':
+      default:
+        CellIcon = NotApplicableIcon;
+        break;
+    }
+
+    return (
+      <td className="center-column">
+        <CellIcon />
+      </td>
+    );
+  };
+
   return (
-    <Table isStriped={true} isBordered={true} isNarrow={true}>
-      <thead>
-        <tr>
-          <th>Feature</th>
-          <th className="center-column">LaTeX</th>
-          <th className="center-column">BibTeX</th>
-        </tr>
-      </thead>
-      <tbody>
-        {SERVER_FEATURES.map(({ name, latex, bibtex }, key) => (
-          <tr key={key}>
-            <td>{name}</td>
-            <CheckmarkRow isChecked={latex} />
-            <CheckmarkRow isChecked={bibtex} />
+    <>
+      <Table isStriped={true} isBordered={true} isNarrow={true}>
+        <thead>
+          <tr>
+            <th>Language Feature</th>
+            <th className="center-column">LaTeX</th>
+            <th className="center-column">BibTeX</th>
           </tr>
-        ))}
-      </tbody>
-    </Table>
+        </thead>
+        <tbody>
+          {SERVER_FEATURES.map(({ name, latex, bibtex }, key) => (
+            <tr key={key}>
+              <td>{name}</td>
+              <FeatureCell status={latex} />
+              <FeatureCell status={bibtex} />
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+      <Content isSize="small">
+        <p>
+          <ImplementedIcon /> = implemented, <NotImplementedIcon /> = not
+          implemented, <NotApplicableIcon /> = not applicable, * = custom
+          feature
+        </p>
+      </Content>
+    </>
   );
 };
 
@@ -176,9 +219,16 @@ const IndexPage: React.FC = () => {
           formatter.
         </FeatureSection>
         <Section>
-          <Title>Feature List</Title>
+          <Title>Language Features</Title>
           <Container>
             <Content>
+              <p>
+                The following features of the{' '}
+                <a href="https://microsoft.github.io/language-server-protocol/specification">
+                  Language Server Protocol
+                </a>{' '}
+                are implemented:
+              </p>
               <FeatureTable />
             </Content>
           </Container>

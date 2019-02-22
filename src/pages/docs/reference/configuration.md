@@ -2,7 +2,7 @@
 path: '/docs/reference/configuration'
 title: 'Configuration'
 category: 'Reference'
-order: 2
+order: 3
 ---
 
 # Configuration

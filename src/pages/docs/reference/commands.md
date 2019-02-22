@@ -2,7 +2,7 @@
 path: '/docs/reference/commands'
 title: 'Commands'
 category: 'Reference'
-order: 1
+order: 2
 ---
 
 # Commands

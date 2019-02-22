@@ -2,7 +2,7 @@
 path: '/docs/reference/custom-messages'
 title: 'Custom Messages'
 category: 'Reference'
-order: 3
+order: 4
 ---
 
 # Custom Messages

@@ -1,5 +1,6 @@
 import { Content } from 'bloomer';
 import { graphql } from 'gatsby';
+import GithubSlugger from 'github-slugger';
 import React from 'react';
 import {
   MenuCategory,
@@ -7,6 +8,10 @@ import {
   NavigableLayout,
 } from '../components/navigableLayout';
 import { SEO } from '../components/seo';
+
+interface Heading {
+  value: string;
+}
 
 interface Frontmatter {
   path: string;
@@ -44,6 +49,7 @@ interface DocsTemplateProps {
     markdownRemark: {
       frontmatter: Frontmatter;
       html: string;
+      headings: Heading[];
     };
     allMarkdownRemark: {
       edges: Edge[];
@@ -53,14 +59,22 @@ interface DocsTemplateProps {
 
 export const DocsTemplate: React.FC<DocsTemplateProps> = ({ data }) => {
   const { markdownRemark, allMarkdownRemark } = data;
-  const { frontmatter, html } = markdownRemark;
+  const { frontmatter, html, headings } = markdownRemark;
   const { title, path } = frontmatter;
 
   const activeItem: MenuItem = { name: title, path };
   const categories = extractCategories(allMarkdownRemark.edges);
+  const slugger = new GithubSlugger();
+  const sections: MenuItem[] = headings.map(x => ({
+    name: x.value,
+    path: `${activeItem.path}#${slugger.slug(x.value)}`,
+  }));
 
   return (
-    <NavigableLayout activeItem={activeItem} categories={categories}>
+    <NavigableLayout
+      activeItem={activeItem}
+      categories={categories}
+      sections={sections}>
       <SEO title={frontmatter.title} />
       <Content dangerouslySetInnerHTML={{ __html: html }} />
     </NavigableLayout>
@@ -77,6 +91,9 @@ export const pageQuery = graphql`
         path
         title
         category
+      }
+      headings(depth: h2) {
+        value
       }
     }
     allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___order] }) {

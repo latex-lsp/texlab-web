@@ -11,7 +11,7 @@ This document describes the configuration settings that the server will query fr
 
 ---
 
-## `latex.build.executable`
+## latex.build.executable
 
 Defines the executable of the LaTeX build tool.
 
@@ -21,7 +21,7 @@ Defines the executable of the LaTeX build tool.
 
 ---
 
-## `latex.build.args`
+## latex.build.args
 
 Defines additional arguments that are passed to the configured LaTeX build tool.
 
@@ -31,7 +31,7 @@ Defines additional arguments that are passed to the configured LaTeX build tool.
 
 ---
 
-## `latex.build.onSave`
+## latex.build.onSave
 
 Build after saving a file.
 
@@ -41,7 +41,7 @@ Build after saving a file.
 
 ---
 
-## `latex.forwardSearch.executable`
+## latex.forwardSearch.executable
 
 Defines the executable of the PDF previewer.
 The previewer needs to support [SyncTeX](http://www.tug.org/TUGboat/tb29-3/tb93laurens.pdf).
@@ -52,7 +52,7 @@ The previewer needs to support [SyncTeX](http://www.tug.org/TUGboat/tb29-3/tb93l
 
 ---
 
-## `latex.forwardSearch.args`
+## latex.forwardSearch.args
 
 Defines additional arguments that are passed to the configured previewer to perform the forward search.
 The placeholders `%f, %p, %l` will be replaced by the server.
@@ -69,7 +69,7 @@ The placeholders `%f, %p, %l` will be replaced by the server.
 
 ---
 
-## `bibtex.formatting.lineLength`
+## bibtex.formatting.lineLength
 
 Defines the maximum amount of characters per line (0 = disable) when formatting BibTeX files.
 

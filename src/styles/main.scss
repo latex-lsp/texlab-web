@@ -73,6 +73,10 @@ $table-striped-row-even-background-color: $grey;
   text-align: center !important;
 }
 
+.menu-list {
+  font-size: 14px;
+}
+
 @import '~bulma/bulma.sass';
 
 @media (min-width: $desktop) {

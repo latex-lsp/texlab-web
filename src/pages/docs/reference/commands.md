@@ -12,7 +12,7 @@ These commands are invoked remotely with [custom messages](/docs/reference/custo
 
 ---
 
-## `latex.build`
+## latex.build
 
 Builds the current file.
 
@@ -22,7 +22,7 @@ Builds the current file.
 
 ---
 
-## `latex.build.cancel`
+## latex.build.cancel
 
 Cancels the current build. This command needs to cancel the [`textDocument/build`](/docs/reference/custom-messages#build-request) request.
 
@@ -32,7 +32,7 @@ Cancels the current build. This command needs to cancel the [`textDocument/build
 
 ---
 
-## `latex.forwardSearch`
+## latex.forwardSearch
 
 Performs a forward search from the current file.
 

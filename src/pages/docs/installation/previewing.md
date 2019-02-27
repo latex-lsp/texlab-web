@@ -22,7 +22,7 @@ For other build systems and editors, please refer to their respective manuals.
 
 ## Windows
 
-On Windows, we highly recommend [SumatraPDF](https://www.sumatrapdfreader.org) as previewer
+We highly recommend [SumatraPDF](https://www.sumatrapdfreader.org) as previewer on Windows
 because Adobe Reader locks the opened PDF file and will therefore prevent further builds.
 
 ### SumatraPDF
@@ -181,3 +181,33 @@ code -g "%1":%2
 and select a mouse button modifier (Edit -> Settings... -> Behavior -> Modifiers -> Mouse button modifiers -> Open in Source Editor)
 of choice.
 You can execute the search by pressing `Modifier+Click` in the PDF document.
+
+## macOS
+
+We recommend [Skim](https://skim-app.sourceforge.io/) on macOS since it is the only native viewer that supports SyncTeX.
+
+### Skim
+
+To use [Skim](https://skim-app.sourceforge.io/) as previewer, add the following line to your `~/.latexmkrc` file:
+
+```perl
+$pdf_previewer = 'open -a Skim';
+```
+
+Additionally, enable the "Reload automatically" setting in the Skim preferences (Skim -> Preferences -> Sync -> Check for file changes).
+
+#### Forward Search
+
+Add the following lines to your editor config:
+
+```json
+{
+  "latex.forwardSearch.executable": "/Applications/Skim.app/Contents/SharedSupport/displayline",
+  "latex.forwardSearch.args": ["%l", "%p", "%f"]
+}
+```
+
+#### Inverse Search
+
+Select the Visual Studio Code preset in the Skim preferences (Skim -> Preferences -> Sync -> PDF-TeX Sync support).
+You can execute the search by pressing `Shift+⌘+Click` in the PDF document.

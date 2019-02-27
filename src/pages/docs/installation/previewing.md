@@ -20,20 +20,19 @@ A forward search can then be executed by invoking the [`latex.forwardSearch`](/d
 In the following sections, we will give configurations for popular viewers with `latexmk` and Visual Studio Code.
 For other build systems and editors, please refer to their respective manuals.
 
-## Windows
+---
 
-We highly recommend [SumatraPDF](https://www.sumatrapdfreader.org) as previewer on Windows
+## SumatraPDF
+
+We highly recommend [SumatraPDF](https://www.sumatrapdfreader.org) on Windows
 because Adobe Reader locks the opened PDF file and will therefore prevent further builds.
-
-### SumatraPDF
-
 To use [SumatraPDF](https://www.sumatrapdfreader.org) as previewer, add the following line to your `%USERPROFILE%/.latexmkrc` file:
 
 ```perl
 $pdf_previewer = 'start "C:\Program Files\SumatraPDF\SumatraPDF.exe" %O %S';
 ```
 
-#### Forward Search
+### Forward Search
 
 Add the following lines to your editor config:
 
@@ -50,7 +49,7 @@ Add the following lines to your editor config:
 }
 ```
 
-#### Inverse Search
+### Inverse Search
 
 Add the following line to your SumatraPDF settings file (Menu -> Settings -> Advanced Options):
 
@@ -62,11 +61,9 @@ InverseSearchCmdLine = "C:\Users\{User}\AppData\Local\Programs\Microsoft VS Code
 
 You can execute the search by pressing `Alt+DoubleClick` in the PDF document.
 
-## Linux
+---
 
-On Linux, you have a wide choice of previewers with SyncTeX support.
-
-### Evince
+## Evince
 
 The SyncTeX feature of [Evince](https://wiki.gnome.org/Apps/Evince) requires communication via D-Bus.
 In order to use it from the command line, install the [evince-synctex](https://github.com/efoerster/evince-synctex) script.
@@ -76,7 +73,7 @@ Then add the following line to your `~/.latexmkrc` file:
 $pdf_previewer = 'start evince-synctex %S "code -g %f:%l"';
 ```
 
-#### Forward Search
+### Forward Search
 
 Add the following lines to your editor config:
 
@@ -87,12 +84,14 @@ Add the following lines to your editor config:
 }
 ```
 
-#### Inverse Search
+### Inverse Search
 
 The inverse search feature is already configured if you use `evince-synctex`.
 You can execute the search by pressing `Ctrl+Click` in the PDF document.
 
-### Okular
+---
+
+## Okular
 
 To use [Okular](https://okular.kde.org/) as previewer, add the following line to your `~/.latexmkrc` file:
 
@@ -100,7 +99,7 @@ To use [Okular](https://okular.kde.org/) as previewer, add the following line to
 $pdf_previewer = 'start okular';
 ```
 
-#### Forward Search
+### Forward Search
 
 Add the following lines to your editor config:
 
@@ -111,7 +110,7 @@ Add the following lines to your editor config:
 }
 ```
 
-#### Inverse Search
+### Inverse Search
 
 Change the editor of Okular (Settings -> Configure Okular... -> Editor) to "Custom Text Editor" and set the following command:
 
@@ -121,7 +120,9 @@ code -g "%f":%l
 
 You can execute the search by pressing `Shift+Click` in the PDF document.
 
-### Zathura
+---
+
+## Zathura
 
 To use [Zathura](https://pwmt.org/projects/zathura/) as previewer, add the following line to your `~/.latexmkrc` file:
 
@@ -129,7 +130,7 @@ To use [Zathura](https://pwmt.org/projects/zathura/) as previewer, add the follo
 $pdf_previewer = 'start zathura';
 ```
 
-#### Forward Search
+### Forward Search
 
 Add the following lines to your editor config:
 
@@ -140,7 +141,7 @@ Add the following lines to your editor config:
 }
 ```
 
-#### Inverse Search
+### Inverse Search
 
 Add the following lines to your `~/.config/zathura/zathurarc` file:
 
@@ -151,7 +152,9 @@ set synctex-editor-command "code -g %{input}:%{line}"
 
 You can execute the search by pressing `Alt+Click` in the PDF document.
 
-### qpdfview
+---
+
+## qpdfview
 
 To use [qpdfview](https://launchpad.net/qpdfview) as previewer, add the following line to your `~/.latexmkrc` file:
 
@@ -159,7 +162,7 @@ To use [qpdfview](https://launchpad.net/qpdfview) as previewer, add the followin
 $pdf_previewer = 'start qpdfview --unique %S';
 ```
 
-#### Forward Search
+### Forward Search
 
 Add the following lines to your editor config:
 
@@ -170,7 +173,7 @@ Add the following lines to your editor config:
 }
 ```
 
-#### Inverse Search
+### Inverse Search
 
 Change the source editor setting (Edit -> Settings... -> Behavior -> Source editor) to:
 
@@ -182,12 +185,11 @@ and select a mouse button modifier (Edit -> Settings... -> Behavior -> Modifiers
 of choice.
 You can execute the search by pressing `Modifier+Click` in the PDF document.
 
-## macOS
+---
+
+## Skim
 
 We recommend [Skim](https://skim-app.sourceforge.io/) on macOS since it is the only native viewer that supports SyncTeX.
-
-### Skim
-
 To use [Skim](https://skim-app.sourceforge.io/) as previewer, add the following line to your `~/.latexmkrc` file:
 
 ```perl
@@ -196,7 +198,7 @@ $pdf_previewer = 'open -a Skim';
 
 Additionally, enable the "Reload automatically" setting in the Skim preferences (Skim -> Preferences -> Sync -> Check for file changes).
 
-#### Forward Search
+### Forward Search
 
 Add the following lines to your editor config:
 
@@ -207,7 +209,7 @@ Add the following lines to your editor config:
 }
 ```
 
-#### Inverse Search
+### Inverse Search
 
 Select the Visual Studio Code preset in the Skim preferences (Skim -> Preferences -> Sync -> PDF-TeX Sync support).
 You can execute the search by pressing `Shift+⌘+Click` in the PDF document.

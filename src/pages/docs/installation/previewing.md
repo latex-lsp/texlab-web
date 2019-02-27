@@ -17,6 +17,9 @@ you need to configure the settings in the [`latex.forwardSearch`](/docs/referenc
 and configure your previewer to call your editor correctly.
 A forward search can then be executed by invoking the [`latex.forwardSearch`](/docs/reference/commands#latexforwardsearch) command.
 
+In the following sections, we will give configurations for popular viewers with `latexmk` and Visual Studio Code.
+For other build systems and editors, please refer to their respective manuals.
+
 ## Windows
 
 On Windows, we highly recommend [SumatraPDF](https://www.sumatrapdfreader.org) as previewer
@@ -24,7 +27,7 @@ because Adobe Reader locks the opened PDF file and will therefore prevent furthe
 
 ### SumatraPDF
 
-You can use SumatraPDF with `latexmk` by adding the following line to your `.latexmkrc` file:
+To use [SumatraPDF](https://www.sumatrapdfreader.org) as previewer, add the following line to your `%USERPROFILE%/.latexmkrc` file:
 
 ```perl
 $pdf_previewer = 'start "C:\Program Files\SumatraPDF\SumatraPDF.exe" %O %S';
@@ -35,6 +38,7 @@ $pdf_previewer = 'start "C:\Program Files\SumatraPDF\SumatraPDF.exe" %O %S';
 Add the following lines to your editor config:
 
 ```json
+{
   "latex.forwardSearch.executable": "C:/Program Files/SumatraPDF/SumatraPDF.exe",
   "latex.forwardSearch.args": [
     "-reuse-instance",
@@ -43,6 +47,7 @@ Add the following lines to your editor config:
     "%f",
     "%l"
   ]
+}
 ```
 
 #### Inverse Search
@@ -53,5 +58,126 @@ Add the following line to your SumatraPDF settings file (Menu -> Settings -> Adv
 InverseSearchCmdLine = "C:\Users\{User}\AppData\Local\Programs\Microsoft VS Code\Code.exe" -g "%f":%l
 ```
 
-> **Note**: This configuration only works with Visual Studio Code.
-> Please make sure to replace `{User}` with your Windows username.
+> **Note**: Please make sure to replace `{User}` with your Windows username.
+
+You can execute the search by pressing `Alt+DoubleClick` in the PDF document.
+
+## Linux
+
+On Linux, you have a wide choice of previewers with SyncTeX support.
+
+### Evince
+
+The SyncTeX feature of [Evince](https://wiki.gnome.org/Apps/Evince) requires communication via D-Bus.
+In order to use it from the command line, install the [evince-synctex](https://github.com/efoerster/evince-synctex) script.
+Then add the following line to your `~/.latexmkrc` file:
+
+```perl
+$pdf_previewer = 'start evince-synctex %S "code -g %f:%l"';
+```
+
+#### Forward Search
+
+Add the following lines to your editor config:
+
+```json
+{
+  "latex.forwardSearch.executable": "evince-synctex",
+  "latex.forwardSearch.args": ["-f", "%l", "%p", "\"code -g %f:%l\""]
+}
+```
+
+#### Inverse Search
+
+The inverse search feature is already configured if you use `evince-synctex`.
+You can execute the search by pressing `Ctrl+Click` in the PDF document.
+
+### Okular
+
+To use [Okular](https://okular.kde.org/) as previewer, add the following line to your `~/.latexmkrc` file:
+
+```perl
+$pdf_previewer = 'start okular';
+```
+
+#### Forward Search
+
+Add the following lines to your editor config:
+
+```json
+{
+  "latex.forwardSearch.executable": "okular",
+  "latex.forwardSearch.args": ["--unique", "file:%p#src:%l%f"]
+}
+```
+
+#### Inverse Search
+
+Change the editor of Okular (Settings -> Configure Okular... -> Editor) to "Custom Text Editor" and set the following command:
+
+```bash
+code -g "%f":%l
+```
+
+You can execute the search by pressing `Shift+Click` in the PDF document.
+
+### Zathura
+
+To use [Zathura](https://pwmt.org/projects/zathura/) as previewer, add the following line to your `~/.latexmkrc` file:
+
+```perl
+$pdf_previewer = 'start zathura';
+```
+
+#### Forward Search
+
+Add the following lines to your editor config:
+
+```json
+{
+  "latex.forwardSearch.executable": "zathura",
+  "latex.forwardSearch.args": ["--synctex-forward", "%l:1:%f", "%p"]
+}
+```
+
+#### Inverse Search
+
+Add the following lines to your `~/.config/zathura/zathurarc` file:
+
+```bash
+set synctex true
+set synctex-editor-command "code -g %{input}:%{line}"
+```
+
+You can execute the search by pressing `Alt+Click` in the PDF document.
+
+### qpdfview
+
+To use [qpdfview](https://launchpad.net/qpdfview) as previewer, add the following line to your `~/.latexmkrc` file:
+
+```perl
+$pdf_previewer = 'start qpdfview --unique %S';
+```
+
+#### Forward Search
+
+Add the following lines to your editor config:
+
+```json
+{
+  "latex.forwardSearch.executable": "qpdfview",
+  "latex.forwardSearch.args": ["--unique", "%p#src:%f:%l:1"]
+}
+```
+
+#### Inverse Search
+
+Change the source editor setting (Edit -> Settings... -> Behavior -> Source editor) to:
+
+```bash
+code -g "%1":%2
+```
+
+and select a mouse button modifier (Edit -> Settings... -> Behavior -> Modifiers -> Mouse button modifiers -> Open in Source Editor)
+of choice.
+You can execute the search by pressing `Modifier+Click` in the PDF document.

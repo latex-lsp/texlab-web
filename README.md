@@ -7,7 +7,7 @@ The website of the [TexLab](https://texlab.netlify.com) project.
 This project uses [Gatsby](https://www.gatsbyjs.org/). To start the development server execute the following command in the project directory:
 
 ```shell
-$ yarn develop
+yarn develop
 ```
 
 # Contributing

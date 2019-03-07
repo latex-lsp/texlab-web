@@ -69,6 +69,16 @@ The placeholders `%f, %p, %l` will be replaced by the server.
 
 ---
 
+## latex.lint.onSave
+
+Lint using [chktex](https://www.nongnu.org/chktex/) after saving a file.
+
+**Type:** `boolean`
+
+**Default value:** `true`
+
+---
+
 ## bibtex.formatting.lineLength
 
 Defines the maximum amount of characters per line (0 = disable) when formatting BibTeX files.

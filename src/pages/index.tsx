@@ -244,7 +244,7 @@ const IndexPage: React.FC = () => {
               </DownloadColumn>
               <DownloadColumn
                 title="Standalone"
-                downloadLink="https://github.com/efoerster/texlab/releases">
+                downloadLink="https://github.com/latex-lsp/texlab/releases">
                 <FontAwesomeIcon icon={faCogs} size="8x" />
               </DownloadColumn>
             </Columns>

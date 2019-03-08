@@ -21,7 +21,7 @@ const NavbarGithubItem = ({ hideOnDesktop = false }) => {
   const isHidden = hideOnDesktop ? 'desktop' : undefined;
   return (
     <NavbarItem
-      href="https://github.com/efoerster/texlab"
+      href="https://github.com/latex-lsp/texlab"
       aria-label="GitHub"
       isHidden={isHidden}>
       <FontAwesomeIcon icon={faGithub} size="lg" />

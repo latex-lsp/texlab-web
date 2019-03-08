@@ -66,7 +66,7 @@ You can execute the search by pressing `Alt+DoubleClick` in the PDF document.
 ## Evince
 
 The SyncTeX feature of [Evince](https://wiki.gnome.org/Apps/Evince) requires communication via D-Bus.
-In order to use it from the command line, install the [evince-synctex](https://github.com/efoerster/evince-synctex) script.
+In order to use it from the command line, install the [evince-synctex](https://github.com/latex-lsp/evince-synctex) script.
 Then add the following line to your `~/.latexmkrc` file:
 
 ```perl

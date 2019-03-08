@@ -16,7 +16,7 @@ export const Layout: React.FC = ({ children }) => {
           <Content>
             <p>
               Made by
-              <a href="https://github.com/efoerster/texlab/graphs/contributors">
+              <a href="https://github.com/latex-lsp/texlab/graphs/contributors">
                 {' '}
                 the TexLab contributors
               </a>
@@ -27,7 +27,7 @@ export const Layout: React.FC = ({ children }) => {
           <Content isSize="small">
             <p>
               The source code is licensed under the{' '}
-              <a href="https://github.com/efoerster/texlab/blob/master/LICENSE">
+              <a href="https://github.com/latex-lsp/texlab/blob/master/LICENSE">
                 MIT license
               </a>
               .
@@ -41,12 +41,12 @@ export const Layout: React.FC = ({ children }) => {
             </p>
             <br />
             <GithubButton
-              href="https://github.com/efoerster/texlab"
+              href="https://github.com/latex-lsp/texlab"
               icon="star"
               size="large"
               showCount={true}
               text="Star"
-              ariaLabel="Star efoerster/texlab on GitHub"
+              ariaLabel="Star latex-lsp/texlab on GitHub"
             />
           </Content>
         </Container>

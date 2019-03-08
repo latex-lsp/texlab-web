@@ -24,7 +24,7 @@ For TexLab to work correctly, you will need to install:
 ## Supported Editors
 
 The server is designed to be independent of the editor. It can be used with any editor that implements the Language Server Protocol.
-We currently only provide an [extension](https://github.com/efoerster/texlab-vscode) for [Visual Studio Code](https://code.visualstudio.com).
+We currently only provide an [extension](https://github.com/latex-lsp/texlab-vscode) for [Visual Studio Code](https://code.visualstudio.com).
 Please see the [download page](/#download) for installation instructions.
 
 ## Usage

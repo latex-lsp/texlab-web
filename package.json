@@ -2,14 +2,14 @@
   "name": "texlab-web",
   "private": true,
   "version": "0.1.0",
-  "author": "efoerster",
+  "author": "latex-lsp",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/efoerster/texlab-web"
+    "url": "https://github.com/latex-lsp/texlab-web"
   },
   "bugs": {
-    "url": "https://github.com/efoerster/texlab-web/issues"
+    "url": "https://github.com/latex-lsp/texlab-web/issues"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.7.2",

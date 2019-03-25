@@ -26,7 +26,7 @@
     "gatsby-plugin-react-helmet": "^3.0.10",
     "gatsby-plugin-sass": "^2.0.10",
     "gatsby-plugin-typescript": "^2.0.9",
-    "gatsby-remark-autolink-headers": "^2.0.15",
+    "gatsby-remark-autolink-headers": "^2.0.16",
     "gatsby-remark-prismjs": "^3.2.4",
     "gatsby-source-filesystem": "^2.0.23",
     "gatsby-transformer-remark": "^2.3.0",

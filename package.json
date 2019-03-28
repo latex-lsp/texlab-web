@@ -20,7 +20,7 @@
     "bloomer": "^0.6.5",
     "bulma": "^0.7.4",
     "gatsby": "^2.2.12",
-    "gatsby-plugin-catch-links": "^2.0.12",
+    "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-manifest": "^2.0.25",
     "gatsby-plugin-offline": "^2.0.24",
     "gatsby-plugin-react-helmet": "^3.0.11",

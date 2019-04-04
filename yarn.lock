@@ -4582,14 +4582,14 @@ gatsby-plugin-sass@^2.0.11:
     "@babel/runtime" "^7.0.0"
     sass-loader "^7.0.1"
 
-gatsby-plugin-typescript@^2.0.11:
-  version "2.0.11"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-2.0.11.tgz#693087b2b52df7090f78355bf9cc8d624bfe4809"
-  integrity sha512-7ef0XPV+fWvnATTCXnXkQxAYfG9D4Jl3VB9NBbViqlGQf2VXEfWQqqhGmSwYNOHhCBXB/EZNysl/ecyj1J/Qyw==
+gatsby-plugin-typescript@^2.0.12:
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-2.0.12.tgz#4e3f137b9b003d50dc87dedc15dff55ca74a6197"
+  integrity sha512-Ep84eukNwAM1zZTEhRuegAAENHtzFKc1He9L89eh/tgvcgfzoJRaA2CaI3Dwdgd6/xvd42KsJLD/vOt31y/IFQ==
   dependencies:
     "@babel/preset-typescript" "^7.0.0"
     "@babel/runtime" "^7.0.0"
-    babel-plugin-remove-graphql-queries "^2.6.2"
+    babel-plugin-remove-graphql-queries "^2.6.3"
 
 gatsby-react-router-scroll@^2.0.7:
   version "2.0.7"

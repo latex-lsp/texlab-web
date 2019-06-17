@@ -29,7 +29,7 @@
     "gatsby-remark-autolink-headers": "^2.0.16",
     "gatsby-remark-prismjs": "^3.2.11",
     "gatsby-source-filesystem": "^2.0.39",
-    "gatsby-transformer-remark": "^2.3.12",
+    "gatsby-transformer-remark": "^2.4.0",
     "github-buttons": "^2.2.9",
     "github-slugger": "^1.2.1",
     "prismjs": "^1.16.0",

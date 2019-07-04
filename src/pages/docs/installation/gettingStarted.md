@@ -16,9 +16,9 @@ For TexLab to work correctly, you will need to install:
 
 - A [TeX distribution](https://www.latex-project.org/get/#tex-distributions).
   All distributions that are based on [TeX Live](https://www.tug.org/texlive/) or [MikTeX](https://miktex.org/) are supported.
-- A [Java 8](https://java.com/en/download) (or later) runtime environment.
+- The [Node.js](https://nodejs.org/) runtime. This is an _optional dependency_ used for the citation rendering feature.
 
-> **Note**: Please make sure that both dependencies are in your `PATH` environment variable.
+> **Note**: Please make sure that all dependencies are in your `PATH` environment variable.
 > If you use MikTeX, then ensure that `kpsewhich` is installed.
 
 ## Supported Editors

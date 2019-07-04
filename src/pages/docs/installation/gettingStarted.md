@@ -17,6 +17,7 @@ For TexLab to work correctly, you will need to install:
 - A [TeX distribution](https://www.latex-project.org/get/#tex-distributions).
   All distributions that are based on [TeX Live](https://www.tug.org/texlive/) or [MikTeX](https://miktex.org/) are supported.
 - The [Node.js](https://nodejs.org/) runtime. This is an _optional dependency_ used for the citation rendering feature.
+- On Windows, you will need to install [Microsoft Visual C++ Redistributable for Visual Studio 2015](https://aka.ms/vs/16/release/vc_redist.x64.exe).
 
 > **Note**: Please make sure that all dependencies are in your `PATH` environment variable.
 > If you use MikTeX, then ensure that `kpsewhich` is installed.

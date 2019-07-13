@@ -69,6 +69,16 @@ The placeholders `%f, %p, %l` will be replaced by the server.
 
 ---
 
+## latex.lint.onChange
+
+Lint using [chktex](https://www.nongnu.org/chktex/) after changing a file.
+
+**Type:** `boolean`
+
+**Default value:** `false`
+
+---
+
 ## latex.lint.onSave
 
 Lint using [chktex](https://www.nongnu.org/chktex/) after saving a file.

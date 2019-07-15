@@ -1,4 +1,5 @@
 import {
+  faBook,
   faCheckCircle,
   faCogs,
   faQuestionCircle,
@@ -190,7 +191,8 @@ const IndexPage: React.FC = () => {
             </Column>
             <Link to="/docs">
               <Button isColor="dark" isOutlined={false} isSize="large">
-                Get Started
+                <FontAwesomeIcon pull="left" icon={faBook} />
+                <span>Get Started</span>
               </Button>
             </Link>
           </Container>

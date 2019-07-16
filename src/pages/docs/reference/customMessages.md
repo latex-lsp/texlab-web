@@ -103,47 +103,7 @@ enum ForwardSearchStatus {
 }
 ```
 
-## Progress Notification
+## Progress Messages
 
-The progress notification is sent from the server to the client to ask the client to indicate progress.
-
-This notification is a [proposed](https://github.com/Microsoft/language-server-protocol/pull/245) addition to the Language Server Protocol.
-A client that supports it needs to set the client capability `clientCapabilities.experimental.progress`.
-
-_Notification_:
-
-- method: 'window/progress'
-- params: `ProgressParams` defined as follows:
-
-```typescript
-interface ProgressParams {
-  /**
-   * A unique identifier to associate multiple progress notifications with the same progress.
-   */
-  id: string;
-
-  /**
-   * The title of the progress.
-   * This should be the same for all ProgressParams with the same id.
-   */
-  title: string;
-
-  /**
-   * Optional progress message to display.
-   * If unset, the previous progress message (if any) is still valid.
-   */
-  message?: string;
-
-  /**
-   * Optional progress percentage to display.
-   * If unset, the previous progress percentage (if any) is still valid.
-   */
-  percentage?: number;
-
-  /**
-   * Set to true on the final progress update.
-   * No more progress notifications with the same ID should be sent.
-   */
-  done?: boolean;
-}
-```
+We make use of the proposed `window/progress/start, window/progress/report, window/progress/done` messages
+that are described [here](https://github.com/microsoft/vscode-languageserver-node/blob/master/protocol/src/protocol.progress.proposed.md).

@@ -7,8 +7,14 @@ order: 0
 
 # Getting Started
 
-**TexLab** is a cross-platform implementation of the [Language Server Protocol](https://microsoft.github.io/language-server-protocol) for the [LaTeX](https://www.latex-project.org/) typesetting system.
+**TexLab** is a cross-platform implementation of the [Language Server Protocol](https://microsoft.github.io/language-server-protocol)
+for the [LaTeX](https://www.latex-project.org/) typesetting system.
 It aims to produce high quality code completion results by indexing your used packages as you type.
+
+The server can be used with [any editor that implements the Language Server Protocol](https://microsoft.github.io/language-server-protocol/implementors/tools/).
+You can either install an editor extension that provides an out-of-box experience
+or download the server binaries and configure your editor manually.
+Please see the [download page](/#download) for all available options.
 
 ## Requirements
 
@@ -21,12 +27,6 @@ For TexLab to work correctly, you will need to install:
 
 > **Note**: Please make sure that all dependencies are in your `PATH` environment variable.
 > If you use MikTeX, then ensure that `kpsewhich` is installed.
-
-## Supported Editors
-
-The server is designed to be independent of the editor. It can be used with any editor that implements the Language Server Protocol.
-We currently only provide an [extension](https://github.com/latex-lsp/texlab-vscode) for [Visual Studio Code](https://code.visualstudio.com).
-Please see the [download page](/#download) for installation instructions.
 
 ## Usage
 

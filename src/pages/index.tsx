@@ -1,7 +1,8 @@
 import {
   faBook,
   faCheckCircle,
-  faCogs,
+  faCubes,
+  faDownload,
   faQuestionCircle,
   faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
@@ -26,6 +27,7 @@ import { FeatureStatus, SERVER_FEATURES } from '../data/features';
 
 import { Link } from 'gatsby';
 import Icon from '../assets/images/icon.svg';
+import NeovimLogo from '../assets/images/neovim.svg';
 import CodeLogo from '../assets/images/vscode.svg';
 import BibtexVideo from '../assets/videos/bibtex.webm';
 import CompletionVideo from '../assets/videos/completion.webm';
@@ -33,9 +35,7 @@ import RenameVideo from '../assets/videos/rename.webm';
 import { Video } from '../components/video';
 
 const LogoImage: React.FC<{ alt: string; src: string }> = ({ alt, src }) => (
-  <figure className="image is-128x128 center-img">
-    <img alt={alt} src={src} />
-  </figure>
+  <img className="image is-128x128 center-img" alt={alt} src={src} />
 );
 
 const Sections: React.FC = ({ children }) => (
@@ -153,20 +153,24 @@ const FeatureTable: React.FC = () => {
 
 interface DownloadColumnProps {
   title: string;
-  downloadLink: string;
+  link: string;
 }
 
 const DownloadColumn: React.FC<DownloadColumnProps> = ({
   title,
-  downloadLink,
+  link,
   children,
 }) => (
-  <Column isSize="1/3">
-    <div className="center-img">{children}</div>
+  <Column isSize="narrow">
+    <div>{children}</div>
     <br />
-    <Subtitle>{title}</Subtitle>
-    <Button isColor="dark" isSize="medium" href={downloadLink}>
-      Download
+    <Button
+      isColor="dark"
+      isOutlined={true}
+      isSize="medium"
+      target="_blank"
+      href={link}>
+      <FontAwesomeIcon pull="left" icon={faDownload} /> {title}
     </Button>
   </Column>
 );
@@ -190,7 +194,7 @@ const IndexPage: React.FC = () => {
               </Subtitle>
             </Column>
             <Link to="/docs">
-              <Button isColor="dark" isOutlined={false} isSize="large">
+              <Button isColor="dark" isSize="large">
                 <FontAwesomeIcon pull="left" icon={faBook} />
                 <span>Get Started</span>
               </Button>
@@ -236,19 +240,36 @@ const IndexPage: React.FC = () => {
           </Container>
         </Section>
         <Section>
-          <Title id="download">Download</Title>
-          <Container>
-            <Columns isCentered={true} isVCentered={true}>
-              <DownloadColumn
-                title="Visual Studio Code"
-                downloadLink="https://marketplace.visualstudio.com/items?itemName=efoerster.texlab">
-                <LogoImage alt="Visual Studio Code logo" src={CodeLogo} />
-              </DownloadColumn>
-              <DownloadColumn
-                title="Standalone"
-                downloadLink="https://github.com/latex-lsp/texlab/releases">
-                <FontAwesomeIcon icon={faCogs} size="8x" />
-              </DownloadColumn>
+          <Container id="download">
+            <Columns isVCentered={true}>
+              <Column>
+                <Title isSize={4}>Editor Extensions</Title>
+                <Columns isCentered={true} isVCentered={true}>
+                  <DownloadColumn
+                    title="VS Code"
+                    link="https://marketplace.visualstudio.com/items?itemName=efoerster.texlab">
+                    <LogoImage alt="Visual Studio Code" src={CodeLogo} />
+                  </DownloadColumn>
+                  <DownloadColumn
+                    title="(Neo)Vim"
+                    link="https://github.com/fannheyward/coc-texlab">
+                    <LogoImage alt="Neovim" src={NeovimLogo} />
+                  </DownloadColumn>
+                </Columns>
+              </Column>
+              <Column isSize="narrow">
+                <Title className="has-text-weight-bold">or</Title>
+              </Column>
+              <Column>
+                <Title isSize={4}>Standalone</Title>
+                <Columns isCentered={true} isVCentered={true}>
+                  <DownloadColumn
+                    title="Binaries"
+                    link="https://github.com/latex-lsp/texlab/releases">
+                    <FontAwesomeIcon icon={faCubes} size="8x" />
+                  </DownloadColumn>
+                </Columns>
+              </Column>
             </Columns>
           </Container>
         </Section>

@@ -21,19 +21,15 @@ Please see the [download page](/#download) for all available options.
 For TexLab to work correctly, you will need to install:
 
 - A [TeX distribution](https://www.latex-project.org/get/#tex-distributions).
-  All distributions that are based on [TeX Live](https://www.tug.org/texlive/) or [MikTeX](https://miktex.org/) are supported.
 - The [Node.js](https://nodejs.org/) runtime. This is an _optional dependency_ used for the citation rendering feature.
 - On Windows, you will need to install [Microsoft Visual C++ Redistributable for Visual Studio 2015](https://aka.ms/vs/16/release/vc_redist.x64.exe).
 
 > **Note**: Please make sure that all dependencies are in your `PATH` environment variable.
-> If you use MikTeX, then ensure that `kpsewhich` is installed.
 
 ## Usage
 
 After installing an editor extension, you can simply start editing LaTeX files.
 All editing features work out-of-the-box over all files in the currently opened workspace.
-
-> **Note**: The completion results will improve over time because the server needs to build a cache of the indexed packages first.
 
 Documents can be built by invoking the [`latex.build`](/docs/reference/commands#latexbuild) command
 or by enabling the [`latex.build.onSave`](/docs/reference/configuration#latexbuildonsave) feature.

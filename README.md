@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2daf26ef-9995-4174-bd4d-762f4951eb2b/deploy-status)](https://app.netlify.com/sites/texlab/deploys)
+
 # texlab-web
 
 The website of the [TexLab](https://texlab.netlify.com) project.

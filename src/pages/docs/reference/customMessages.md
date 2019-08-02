@@ -56,6 +56,11 @@ enum BuildStatus {
    * The build process failed to start or crashed.
    */
   Failure = 2,
+
+  /**
+   * The build process was cancelled.
+   */
+  Cancelled = 3,
 }
 ```
 
@@ -105,5 +110,5 @@ enum ForwardSearchStatus {
 
 ## Progress Messages
 
-We make use of the proposed `window/progress/start, window/progress/report, window/progress/done` messages
-that are described [here](https://github.com/microsoft/vscode-languageserver-node/blob/master/protocol/src/protocol.progress.proposed.md).
+We make use of the proposed `window/progress/*` messages that are described
+[here](https://github.com/microsoft/vscode-languageserver-node/blob/master/protocol/src/protocol.progress.proposed.md).

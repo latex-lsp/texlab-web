@@ -24,11 +24,11 @@ Builds the current file.
 
 ## latex.build.cancel
 
-Cancels the current build. This command needs to cancel the [`textDocument/build`](/docs/reference/custom-messages#build-request) request.
+Cancel all running builds. This command needs to send the [`window/progress/cancel`](https://github.com/microsoft/vscode-languageserver-node/blob/master/protocol/src/protocol.progress.proposed.md#progress-cancel-notification) notification with the id `texlab-build-*`.
 
 **Hotkey:** `Ctrl+Break`
 
-**Remote call:** [`$/cancelRequest`](https://microsoft.github.io/language-server-protocol/specification#cancelRequest)
+**Remote call:** [`window/progress/cancel`](https://github.com/microsoft/vscode-languageserver-node/blob/master/protocol/src/protocol.progress.proposed.md#progress-cancel-notification)
 
 ---
 

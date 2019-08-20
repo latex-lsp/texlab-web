@@ -52,8 +52,8 @@ export const SERVER_FEATURES: FeatureTableEntry[] = [
   },
   {
     name: 'Document symbols',
-    latex: 'not-implemented',
-    bibtex: 'not-implemented',
+    latex: 'implemented',
+    bibtex: 'implemented',
   },
   {
     name: 'Code action',

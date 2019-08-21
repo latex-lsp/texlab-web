@@ -26,6 +26,7 @@ import { SEO } from '../components/seo';
 import { FeatureStatus, SERVER_FEATURES } from '../data/features';
 
 import { Link } from 'gatsby';
+import EmacsLogo from '../assets/images/emacs.svg';
 import Icon from '../assets/images/icon.svg';
 import NeovimLogo from '../assets/images/neovim.svg';
 import CodeLogo from '../assets/images/vscode.svg';
@@ -254,6 +255,11 @@ const IndexPage: React.FC = () => {
                     title="(Neo)Vim"
                     link="https://github.com/fannheyward/coc-texlab">
                     <LogoImage alt="Neovim" src={NeovimLogo} />
+                  </DownloadColumn>
+                  <DownloadColumn
+                    title="Emacs"
+                    link="https://github.com/ROCKTAKEY/lsp-latex">
+                    <LogoImage alt="Emacs" src={EmacsLogo} />
                   </DownloadColumn>
                 </Columns>
               </Column>

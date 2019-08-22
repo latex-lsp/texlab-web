@@ -30,6 +30,7 @@ import EmacsLogo from '../assets/images/emacs.svg';
 import Icon from '../assets/images/icon.svg';
 import LinuxLogo from '../assets/images/linux.svg';
 import NeovimLogo from '../assets/images/neovim.svg';
+import SublimeLogo from '../assets/images/sublime.svg';
 import CodeLogo from '../assets/images/vscode.svg';
 import WindowsLogo from '../assets/images/windows.svg';
 import BibtexVideo from '../assets/videos/bibtex.webm';
@@ -267,6 +268,11 @@ const IndexPage: React.FC = () => {
                     title="Emacs"
                     link="https://github.com/ROCKTAKEY/lsp-latex">
                     <LogoImage alt="Emacs" src={EmacsLogo} />
+                  </DownloadColumn>
+                  <DownloadColumn
+                    title="Sublime"
+                    link="https://github.com/tomv564/LSP">
+                    <LogoImage alt="Sublime" src={SublimeLogo} />
                   </DownloadColumn>
                 </Columns>
               </Column>

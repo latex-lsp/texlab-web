@@ -287,7 +287,9 @@ const IndexPage: React.FC = () => {
                     link="https://github.com/latex-lsp/texlab/releases">
                     <LogoImage alt="Windows" src={WindowsLogo} />
                   </DownloadColumn>
-                  <DownloadColumn title="Linux" link="/docs#linux">
+                  <DownloadColumn
+                    title="Linux"
+                    link="https://github.com/latex-lsp/texlab/releases">
                     <LogoImage alt="Linux" src={LinuxLogo} />
                   </DownloadColumn>
                   <DownloadColumn

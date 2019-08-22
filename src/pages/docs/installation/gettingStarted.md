@@ -20,47 +20,6 @@ If your editor extension does not install the TexLab server automatically, you w
 We provide [precompiled binaries](https://github.com/latex-lsp/texlab/releases) for Windows, Linux and macOS.
 Alternatively, you can build TexLab from [source](https://github.com/latex-lsp/texlab#building-from-source).
 
-### Linux
-
-If you use Linux, you should install TexLab from the following repositories.
-
-#### Debian and Ubuntu based distributions
-
-We maintain a Debian repository for distributions that use the APT package manager. The following script will import the key and add the repository:
-
-```shell
-wget -qO - https://bintray.com/user/downloadSubjectPublicKey?username=efoerster | sudo apt-key add -
-echo "deb https://dl.bintray.com/efoerster/texlab-deb stable main" | sudo tee -a /etc/apt/sources.list
-```
-
-Then update the package list and install the `texlab` package:
-
-```shell
-sudo apt-get update
-sudo apt-get install texlab
-```
-
-#### RHEL, Fedora, CentOS and SUSE based distributions
-
-We maintain a RPM repository for distributions that use the RPM package manager. The following script will import the key and add the repository:
-
-```shell
-sudo rpm --import https://bintray.com/user/downloadSubjectPublicKey?username=efoerster
-sudo sh -c 'echo -e "[texlab]\nname=TexLab\nbaseurl=https://dl.bintray.com/efoerster/texlab-rpm\ngpgcheck=1\ngpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=efoerster\nenabled=1" > /etc/yum.repos.d/texlab.repo'
-```
-
-Then update the package list and install the `texlab` package, e.g. by using `dnf`:
-
-```shell
-dnf check-update
-sudo dnf install texlab
-```
-
-#### Arch Linux based distributions
-
-We maintain an [AUR package](https://aur.archlinux.org/packages/texlab/).
-For installation instructions, see the [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Build_and_install_the_package).
-
 ## Requirements
 
 For TexLab to work correctly, you will need to install a [TeX distribution](https://www.latex-project.org/get/#tex-distributions) of choice.

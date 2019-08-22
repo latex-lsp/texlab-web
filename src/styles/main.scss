@@ -78,6 +78,7 @@ $table-striped-row-even-background-color: $grey;
 }
 
 @import '~bulma/bulma.sass';
+@import '~bulma-divider';
 
 @media (min-width: $desktop) {
   .reverse-columns {

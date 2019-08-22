@@ -1,7 +1,6 @@
 import {
   faBook,
   faCheckCircle,
-  faCubes,
   faDownload,
   faQuestionCircle,
   faTimesCircle,
@@ -20,23 +19,31 @@ import {
   Table,
   Title,
 } from 'bloomer';
+import { Link } from 'gatsby';
 import React from 'react';
 import { Layout } from '../components/layout';
 import { SEO } from '../components/seo';
 import { FeatureStatus, SERVER_FEATURES } from '../data/features';
 
-import { Link } from 'gatsby';
+import AppleLogo from '../assets/images/apple.svg';
 import EmacsLogo from '../assets/images/emacs.svg';
 import Icon from '../assets/images/icon.svg';
+import LinuxLogo from '../assets/images/linux.svg';
 import NeovimLogo from '../assets/images/neovim.svg';
 import CodeLogo from '../assets/images/vscode.svg';
+import WindowsLogo from '../assets/images/windows.svg';
 import BibtexVideo from '../assets/videos/bibtex.webm';
 import CompletionVideo from '../assets/videos/completion.webm';
 import RenameVideo from '../assets/videos/rename.webm';
 import { Video } from '../components/video';
 
 const LogoImage: React.FC<{ alt: string; src: string }> = ({ alt, src }) => (
-  <img className="image is-128x128 center-img" alt={alt} src={src} />
+  <img
+    className="image center-img"
+    alt={alt}
+    src={src}
+    style={{ maxWidth: 128, height: 128 }}
+  />
 );
 
 const Sections: React.FC = ({ children }) => (
@@ -242,10 +249,10 @@ const IndexPage: React.FC = () => {
         </Section>
         <Section>
           <Container id="download">
-            <Columns isVCentered={true}>
-              <Column>
+            <Columns isCentered={true}>
+              <Column isSize="narrow">
                 <Title isSize={4}>Editor Extensions</Title>
-                <Columns isCentered={true} isVCentered={true}>
+                <Columns>
                   <DownloadColumn
                     title="VS Code"
                     link="https://marketplace.visualstudio.com/items?itemName=efoerster.texlab">
@@ -263,16 +270,24 @@ const IndexPage: React.FC = () => {
                   </DownloadColumn>
                 </Columns>
               </Column>
-              <Column isSize="narrow">
-                <Title className="has-text-weight-bold">or</Title>
+              <Column isSize="narrow" style={{ display: 'contents' }}>
+                <div className="is-divider-vertical" data-content="AND/OR" />
               </Column>
-              <Column>
-                <Title isSize={4}>Standalone</Title>
-                <Columns isCentered={true} isVCentered={true}>
+              <Column isSize="narrow">
+                <Title isSize={4}>Language Server</Title>
+                <Columns>
                   <DownloadColumn
-                    title="Binaries"
+                    title="Windows"
                     link="https://github.com/latex-lsp/texlab/releases">
-                    <FontAwesomeIcon icon={faCubes} size="8x" />
+                    <LogoImage alt="Windows" src={WindowsLogo} />
+                  </DownloadColumn>
+                  <DownloadColumn title="Linux" link="/docs#linux">
+                    <LogoImage alt="Linux" src={LinuxLogo} />
+                  </DownloadColumn>
+                  <DownloadColumn
+                    title="macOS"
+                    link="https://github.com/latex-lsp/texlab/releases">
+                    <LogoImage alt="macOS" src={AppleLogo} />
                   </DownloadColumn>
                 </Columns>
               </Column>

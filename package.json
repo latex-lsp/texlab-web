@@ -20,7 +20,7 @@
     "bloomer": "^0.6.5",
     "bulma": "^0.7.5",
     "bulma-divider": "^0.2.0",
-    "gatsby": "^2.13.83",
+    "gatsby": "^2.15.2",
     "gatsby-plugin-catch-links": "^2.1.7",
     "gatsby-plugin-manifest": "^2.2.13",
     "gatsby-plugin-offline": "^2.2.10",

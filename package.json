@@ -22,7 +22,7 @@
     "bulma-divider": "^0.2.0",
     "gatsby": "^2.13.83",
     "gatsby-plugin-catch-links": "^2.1.5",
-    "gatsby-plugin-manifest": "^2.2.9",
+    "gatsby-plugin-manifest": "^2.2.13",
     "gatsby-plugin-offline": "^2.2.10",
     "gatsby-plugin-react-helmet": "^3.1.5",
     "gatsby-plugin-sass": "^2.1.12",

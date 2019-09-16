@@ -44,7 +44,7 @@
     "@types/node": "^12.7.5",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
-    "@types/react-helmet": "^5.0.9",
+    "@types/react-helmet": "^5.0.10",
     "@types/react-visibility-sensor": "^5.0.1",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",

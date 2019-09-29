@@ -1,5 +1,5 @@
 ---
-path: '/docs/reference/completion-item-kinds'
+path: '/docs/reference/lsp-kinds'
 title: 'LSP Kinds'
 category: 'Reference'
 order: 5

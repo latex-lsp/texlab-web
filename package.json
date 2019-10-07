@@ -31,7 +31,7 @@
     "gatsby-remark-prismjs": "^3.3.17",
     "gatsby-source-filesystem": "^2.1.28",
     "gatsby-transformer-remark": "^2.6.27",
-    "github-buttons": "^2.2.10",
+    "github-buttons": "^2.3.4",
     "github-slugger": "^1.2.1",
     "prismjs": "^1.17.1",
     "prismjs-material-theme": "^1.0.0",

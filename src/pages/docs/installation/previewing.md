@@ -10,9 +10,9 @@ order: 1
 We believe that previewing should be a concern of the build system.
 With [`latexmk`](https://ctan.org/pkg/latexmk?lang=en), you can enable the preview feature by adding the `-pv` flag
 to the [`latex.build.args`](/docs/reference/configuration/#latexbuildargs) setting.
+After that, the configured previewer will start on each rebuild of the document.
 Alternatively, use the `-pvc` flag to tell the previewer to continuously check for updates, 
 instead of opening a new window each time a build completes.
-After that, the configured previewer will start on each rebuild of the document.
 
 If you want to use [SyncTeX](http://www.tug.org/TUGboat/tb29-3/tb93laurens.pdf),
 you need to configure the settings in the [`latex.forwardSearch`](/docs/reference/configuration#latexforwardsearchexecutable) section

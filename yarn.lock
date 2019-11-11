@@ -2798,6 +2798,21 @@ chokidar@3.2.1:
   optionalDependencies:
     fsevents "~2.1.0"
 
+chokidar@3.3.0, chokidar@^3.0.2:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.3.0.tgz#12c0714668c55800f659e262d4962a97faf554a6"
+  integrity sha512-dGmKLDdT3Gdl7fBUe8XK+gAtGmzy5Fn0XkkWQuYxGIgWVPPse2CxFA5mtrlD0TOHaHjEUqkWNyP1XdHoJES/4A==
+  dependencies:
+    anymatch "~3.1.1"
+    braces "~3.0.2"
+    glob-parent "~5.1.0"
+    is-binary-path "~2.1.0"
+    is-glob "~4.0.1"
+    normalize-path "~3.0.0"
+    readdirp "~3.2.0"
+  optionalDependencies:
+    fsevents "~2.1.1"
+
 chokidar@^2.0.2, chokidar@^2.0.4, chokidar@^2.1.8:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.1.8.tgz#804b3a7b6a99358c3c5c61e71d8728f041cff917"
@@ -2816,21 +2831,6 @@ chokidar@^2.0.2, chokidar@^2.0.4, chokidar@^2.1.8:
     upath "^1.1.1"
   optionalDependencies:
     fsevents "^1.2.7"
-
-chokidar@^3.0.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.2.2.tgz#a433973350021e09f2b853a2287781022c0dc935"
-  integrity sha512-bw3pm7kZ2Wa6+jQWYP/c7bAZy3i4GwiIiMO2EeRjrE48l8vBqC/WvFhSF0xyM8fQiPEGvwMY/5bqDG7sSEOuhg==
-  dependencies:
-    anymatch "~3.1.1"
-    braces "~3.0.2"
-    glob-parent "~5.1.0"
-    is-binary-path "~2.1.0"
-    is-glob "~4.0.1"
-    normalize-path "~3.0.0"
-    readdirp "~3.2.0"
-  optionalDependencies:
-    fsevents "~2.1.1"
 
 chownr@^1.1.1:
   version "1.1.1"
@@ -4860,10 +4860,10 @@ file-loader@^1.1.11:
     loader-utils "^1.0.2"
     schema-utils "^0.4.5"
 
-file-type@^12.3.0:
-  version "12.3.0"
-  resolved "https://registry.yarnpkg.com/file-type/-/file-type-12.3.0.tgz#74d755e5dc9c5cbc7ee6f182529b453906ac88c2"
-  integrity sha512-4E4Esq9KLwjYCY32E7qSmd0h7LefcniZHX+XcdJ4Wfx1uGJX7QCigiqw/U0yT7WOslm28yhxl87DJ0wHYv0RAA==
+file-type@^12.4.0:
+  version "12.4.0"
+  resolved "https://registry.yarnpkg.com/file-type/-/file-type-12.4.0.tgz#a9a399459e1940d9f34b3973039958f1f36a565e"
+  integrity sha512-WTvyKq8yjtNmUtVAD8LGcTkvtCdJglM6ks2HTqEClm6+65XTqM6MoZYA1Vtra50DLRWLiM38fEs1y56f5VhnUA==
 
 filesize@3.5.11:
   version "3.5.11"
@@ -5301,18 +5301,18 @@ gatsby-remark-prismjs@^3.3.22:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.4.1"
 
-gatsby-source-filesystem@^2.1.33:
-  version "2.1.33"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.33.tgz#6a6e4a075be7af5db603acb695b9eabdc885985e"
-  integrity sha512-QhhHM8lalThJs5OsNgL6ILxIA36rRYsC+9ynUSEBku88+qBajycURxPjg+gn4NfWYfGAUXigxQzomQagHOLvlQ==
+gatsby-source-filesystem@^2.1.36:
+  version "2.1.36"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.36.tgz#3e2fda1d7e7a31cfc0e67814ef7f4fb94d6e4e8c"
+  integrity sha512-8J2bEfIM+bxXTCcJ9Y5ZV7WEPiFDoY/G0tfZVrYsZZiuLPSNKuryxtjV0NwSDRE8mQZn9M54a3Q8xI34/pkfyQ==
   dependencies:
-    "@babel/runtime" "^7.6.3"
+    "@babel/runtime" "^7.7.2"
     better-queue "^3.8.10"
-    bluebird "^3.7.0"
-    chokidar "3.2.1"
-    file-type "^12.3.0"
+    bluebird "^3.7.1"
+    chokidar "3.3.0"
+    file-type "^12.4.0"
     fs-extra "^8.1.0"
-    gatsby-core-utils "^1.0.15"
+    gatsby-core-utils "^1.0.18"
     got "^7.1.0"
     md5-file "^3.2.3"
     mime "^2.4.4"

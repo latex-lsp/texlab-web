@@ -24,7 +24,7 @@
     "gatsby-plugin-catch-links": "^2.1.19",
     "gatsby-plugin-manifest": "^2.2.30",
     "gatsby-plugin-offline": "^3.0.22",
-    "gatsby-plugin-react-helmet": "^3.1.15",
+    "gatsby-plugin-react-helmet": "^3.1.16",
     "gatsby-plugin-sass": "^2.1.23",
     "gatsby-plugin-typescript": "^2.1.19",
     "gatsby-remark-autolink-headers": "^2.1.18",

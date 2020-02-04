@@ -24,6 +24,10 @@ Defines the executable of the LaTeX build tool.
 ## latex.build.args
 
 Defines additional arguments that are passed to the configured LaTeX build tool.
+Note that flags and their arguments need to be separate
+elements in this array.
+To pass the arguments `-foo bar` to a build tool,
+`latex.build.args` needs to be `["-foo", "bar"]`.
 
 **Type:** `string[]`
 

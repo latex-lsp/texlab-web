@@ -11,7 +11,7 @@ We believe that previewing should be a concern of the build system.
 With [`latexmk`](https://ctan.org/pkg/latexmk?lang=en), you can enable the preview feature by adding the `-pv` flag
 to the [`latex.build.args`](/docs/reference/configuration/#latexbuildargs) setting.
 After that, the configured previewer will start on each rebuild of the document.
-Alternatively, use the `-pvc` flag to tell the previewer to continuously check for updates, 
+Alternatively, use the `-pvc` flag to tell the previewer to continuously check for updates,
 instead of opening a new window each time a build completes.
 
 If you want to use [SyncTeX](http://www.tug.org/TUGboat/tb29-3/tb93laurens.pdf),
@@ -198,6 +198,9 @@ To use [Skim](https://skim-app.sourceforge.io/) as previewer, add the following 
 $pdf_previewer = 'open -a Skim';
 ```
 
+If you want Skim to stay in the background after building,
+you can add the `-g` option to the `open` arguments.
+
 Additionally, enable the "Reload automatically" setting in the Skim preferences (Skim -> Preferences -> Sync -> Check for file changes).
 
 ### Forward Search
@@ -210,6 +213,10 @@ Add the following lines to your editor config:
   "latex.forwardSearch.args": ["%l", "%p", "%f"]
 }
 ```
+
+If you want Skim to stay in the background after
+executing the forward search, you can add the `-g` option
+to `latex.forwardSearch.args`.
 
 ### Inverse Search
 

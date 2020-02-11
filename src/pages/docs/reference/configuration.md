@@ -45,6 +45,19 @@ Build after saving a file.
 
 ---
 
+## latex.build.outputDirectory
+
+Defines the directory containing the build artifacts.
+Note that you need to set the output directory in `latex.build.args` too,
+if you want to change the build directory.
+In this case, use the `-outdir` flag for `latexmk`.
+
+**Type:** `string`
+
+**Default value:** `.` (the same directory as the TeX file)
+
+---
+
 ## latex.forwardSearch.executable
 
 Defines the executable of the PDF previewer.

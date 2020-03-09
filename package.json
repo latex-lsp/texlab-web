@@ -28,7 +28,7 @@
     "gatsby-plugin-sass": "^2.1.29",
     "gatsby-plugin-typescript": "^2.2.0",
     "gatsby-remark-autolink-headers": "^2.1.24",
-    "gatsby-remark-prismjs": "^3.3.31",
+    "gatsby-remark-prismjs": "^3.3.33",
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-transformer-remark": "^2.6.53",
     "github-buttons": "^2.7.0",

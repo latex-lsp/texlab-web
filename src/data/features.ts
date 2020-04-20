@@ -77,7 +77,7 @@ export const SERVER_FEATURES: FeatureTableEntry[] = [
   },
   {
     name: 'Document formatting',
-    latex: 'not-implemented',
+    latex: 'implemented',
     bibtex: 'implemented',
   },
   {

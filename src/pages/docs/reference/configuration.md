@@ -7,7 +7,17 @@ order: 3
 
 # Configuration
 
-This document describes the configuration settings that the server will query from the extension.
+This document describes the configuration settings that the server will query from the LSP client / extension.
+
+---
+
+## latex.rootDirectory
+
+Defines the directory from which the source files get compiled.
+
+**Type:** `string | null`
+
+**Default value**: `null` (Visual Studio Code extension: `.`)
 
 ---
 
@@ -28,10 +38,15 @@ Note that flags and their arguments need to be separate
 elements in this array.
 To pass the arguments `-foo bar` to a build tool,
 `latex.build.args` needs to be `["-foo", "bar"]`.
+The placeholder `%f` will be replaced by the server.
+
+**Placeholders:**
+
+- `%f`: The path of the TeX file to compile.
 
 **Type:** `string[]`
 
-**Default value:** `["-pdf", "-interaction=nonstopmode", "-synctex=1"]`
+**Default value:** `["-pdf", "-interaction=nonstopmode", "-synctex=1", "%f"]`
 
 ---
 
@@ -80,9 +95,9 @@ The placeholders `%f, %p, %l` will be replaced by the server.
 - `%p`: The path of the current PDF file.
 - `%l`: The current line number.
 
-**Type:** `string[]`
+**Type:** `string[] | null`
 
-**Default value:** `[]`
+**Default value:** `null`
 
 ---
 
@@ -113,3 +128,14 @@ Defines the maximum amount of characters per line (0 = disable) when formatting 
 **Type:** `integer`
 
 **Default value:** `120`
+
+---
+
+## bibtex.formatting.formatter
+
+Defines the formatter to use for BibTeX formatting.
+Possible values are either `texlab` or `latexindent`.
+
+**Type:** `string`
+
+**Default value:** `texlab`

@@ -73,6 +73,16 @@ In this case, use the `-outdir` flag for `latexmk`.
 
 ---
 
+## latex.build.forwardSearchAfter
+
+Execute forward search after building.
+
+**Type:** `boolean`
+
+**Default value:** `false`
+
+---
+
 ## latex.forwardSearch.executable
 
 Defines the executable of the PDF previewer.

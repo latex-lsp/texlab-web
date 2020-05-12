@@ -14,7 +14,11 @@ export class GithubButton extends React.Component<GithubButtonProps> {
   private containerRef = React.createRef<HTMLDivElement>();
 
   public componentDidMount() {
-    const container = this.containerRef.current!!;
+    if (!this.containerRef.current) {
+      return;
+    }
+
+    const container = this.containerRef.current;
     const { href, icon, size, showCount, text, title, ariaLabel } = this.props;
     const options = {
       href,

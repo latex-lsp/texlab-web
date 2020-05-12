@@ -46,13 +46,14 @@
     "@types/react-dom": "^16.9.5",
     "@types/react-helmet": "^5.0.15",
     "@types/react-visibility-sensor": "^5.0.1",
+    "@typescript-eslint/eslint-plugin": "^2.32.0",
+    "@typescript-eslint/parser": "^2.32.0",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-react": "^7.19.0",
     "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
-    "tslint": "^5.20.1",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-react": "^4.2.0",
-    "typescript": "^3.8.3",
-    "typescript-tslint-plugin": "^0.5.5"
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "build": "gatsby build",
@@ -60,6 +61,6 @@
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "lint": "tslint --project ."
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   }
 }

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/camelcase */
+/* eslint-disable no-undef */
 module.exports = {
   siteMetadata: {
     title: 'TexLab',

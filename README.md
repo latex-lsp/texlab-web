@@ -2,7 +2,7 @@
 
 # texlab-web
 
-The website of the [TexLab](https://texlab.netlify.com) project.
+The website of the [TexLab](https://texlab.netlify.app) project.
 
 # Getting Started
 

@@ -35,3 +35,28 @@ or by enabling the [`latex.build.onSave`](/docs/reference/configuration#latexbui
 Hanging builds can be aborted with the [`latex.build.cancel`](/docs/reference/commands#latexbuildcancel) command.
 By default, [`latexmk`](https://ctan.org/pkg/latexmk?lang=en) is used as build system.
 You can customize this by changing the settings in the [`latex.build`](/docs/reference/configuration#latexbuildexecutable) section.
+
+### Example: Using `tectonic`
+[`tectonic`](https://tectonic-typesetting.github.io/) is an alternative to `latexmk`, built in Rust.
+You can quickly get started by changing `.vscode/settings.json` in your workspace to include the following:
+```jsonc
+{
+    // See `tectonic --help` for the format
+    "latex.build.executable": "tectonic",
+    "latex.build.args": [
+        // Input
+        "%f",
+        // Flags
+        "--synctex",
+        "--keep-logs",
+        "--keep-intermediates",
+        // Options
+        // OPTIONAL: If you want a custom out directory,
+        // uncomment the following line.
+        //"--outdir out",
+    ],
+    // OPTIONAL: The extension needs to be configured 
+    // to read the logs from the out directory as well.
+    // "latex.build.outputDirectory": "out",
+}
+```

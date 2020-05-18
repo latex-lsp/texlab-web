@@ -47,7 +47,7 @@
     "@types/react-helmet": "^5.0.15",
     "@types/react-visibility-sensor": "^5.0.1",
     "@typescript-eslint/eslint-plugin": "^2.32.0",
-    "@typescript-eslint/parser": "^2.32.0",
+    "@typescript-eslint/parser": "^2.33.0",
     "eslint": "^7.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-react": "^7.19.0",

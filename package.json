@@ -37,7 +37,7 @@
     "prismjs-material-theme": "^1.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-helmet": "^5.2.1",
+    "react-helmet": "^6.0.0",
     "react-visibility-sensor": "^5.1.1"
   },
   "devDependencies": {

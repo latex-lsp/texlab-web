@@ -107,8 +107,3 @@ enum ForwardSearchStatus {
   Unconfigured = 3,
 }
 ```
-
-## Progress Messages
-
-We make use of the proposed `window/progress/*` messages that are described
-[here](https://github.com/microsoft/vscode-languageserver-node/blob/master/protocol/src/protocol.progress.proposed.md).

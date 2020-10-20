@@ -28,14 +28,14 @@ export const Layout: React.FC = ({ children }) => {
             <p>
               The source code is licensed under the{' '}
               <a href="https://github.com/latex-lsp/texlab/blob/master/LICENSE">
-                MIT license
+                GNU General Public License v3
               </a>
               .
             </p>
             <p>
               The website content is licensed under{' '}
               <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-                CC ANS 4.0 license
+                CC-BY-NC-SA 4.0 license
               </a>
               .
             </p>

@@ -16,7 +16,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
-    "@fortawesome/react-fontawesome": "^0.1.9",
+    "@fortawesome/react-fontawesome": "^0.1.12",
     "bloomer": "^0.6.5",
     "bulma": "^0.8.2",
     "bulma-divider": "^0.2.0",

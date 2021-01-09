@@ -71,7 +71,7 @@ The forward search request is sent from the client to the server when the user r
 _Request_:
 
 - method: 'textDocument/forwardSearch'
-- params: [`TextDocumentPositionParams`](https://microsoft.github.io/language-server-protocol/specification#textdocumentpositionparams)
+- params: [`TextDocumentPositionParams`](https://microsoft.github.io/language-server-protocol/specification#textDocumentPositionParams)
 
 _Response_:
 

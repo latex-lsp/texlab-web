@@ -42,8 +42,8 @@ You can quickly get started by changing `.vscode/settings.json` in your workspac
 ```jsonc
 {
     // See `tectonic --help` for the format
-    "latex.build.executable": "tectonic",
-    "latex.build.args": [
+    "texlab.build.executable": "tectonic",
+    "texlab.build.args": [
         // Input
         "%f",
         // Flags
@@ -55,8 +55,5 @@ You can quickly get started by changing `.vscode/settings.json` in your workspac
         // uncomment the following line.
         //"--outdir out",
     ],
-    // OPTIONAL: The extension needs to be configured 
-    // to read the logs from the out directory as well.
-    // "latex.build.outputDirectory": "out",
 }
 ```

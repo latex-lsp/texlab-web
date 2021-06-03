@@ -1,6 +1,12 @@
 [build]
-  publish = "public"
-  command = "npm run build"
+publish = "public"
+command = "npm run build"
 
 [[plugins]]
-  package = "netlify-plugin-gatsby-cache"
+package = "netlify-plugin-gatsby-cache"
+
+[[redirects]]
+from = "https://texlab.netlify.app/*"
+to = "https://github.com/latex-lsp/texlab"
+status = 301
+force = true
